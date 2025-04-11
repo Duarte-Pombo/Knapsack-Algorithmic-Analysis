@@ -1,32 +1,41 @@
-# Prerequisites
-*.d
+# CLion and JetBrains IDEs
+.idea/
+*.iml
 
-# Compiled Object files
-*.slo
-*.lo
+# Ignore compiled binary
+Project01
+
+# Ignore CMake-generated installation script
+cmake_install.cmake
+
+
+# Ignore build directory
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Compiled binaries and object files
 *.o
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
+*.out
+*.exe
+*.bin
+*.dll
 *.so
 *.dylib
-*.dll
+a.out
+a.exe
 
-# Fortran module files
-*.mod
-*.smod
+# Debug and Release directories
+dist/
+out/
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
 
-# Executables
-*.exe
-*.out
-*.app
+
+
+
+cmake-build-debug/
+.DS_Store
+
