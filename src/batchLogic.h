@@ -8,6 +8,6 @@
 #define YELLOW "\033[1;33m"
 
 using namespace std;
-void batchMode(const string& inputFile, const string& outputFile);
+void batchMode(const int datasetNum, const int algMode);
 
 #endif //BATCHLOGIC_H

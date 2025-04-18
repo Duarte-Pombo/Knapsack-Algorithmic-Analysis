@@ -3,7 +3,7 @@
 #include "batchLogic.h"
 using namespace std;
 
-void batchMode(const string& inputFile, const string& outputFile) {
+void batchMode(const int datasetNum, const int algMode) {
     cout << "running batchMode" << endl;
     return;
 }
