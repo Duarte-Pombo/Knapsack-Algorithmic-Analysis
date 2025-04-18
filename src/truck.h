@@ -1,16 +1,13 @@
 #ifndef TRUCK_H
 #define TRUCK_H
 
-#include <iostream>
 #include <vector>
 #include "pallet.h"
 
-using namespace std;
-
 class Truck {
     private:
-        int maxWeight; // store truck weight capacity
-        int currProfit;// store truck current profit
+        int maxWeight = -1; // store truck weight capacity
+        int currProfit = -1;// store truck current profit
         vector<Pallet> currPallets;// store current pallets in truck
     public:
         int getMaxWeight() const;
