@@ -41,15 +41,15 @@ void batchMode(const int datasetNum, const int algMode) {
         case 1:
             optimalSolutionsList = BruteForceAlgorithm (truck, pallets);
             break;
-        case 2:
-            optimalSolutionsList = DynamicProgramingAlgorithm (truck, pallets);
-            break;
-        case 3:
-            optimalSolutionsList = GreedyAlgorithm (truck, pallets);
-            break;
-        case 4:
-            optimalSolutionsList = ILPAlgorithm (truck, pallets);
-            break;
+        // case 2:
+        //     optimalSolutionsList = DynamicProgramingAlgorithm (truck, pallets);
+        //     break;
+        // case 3:
+        //     optimalSolutionsList = GreedyAlgorithm (truck, pallets);
+        //     break;
+        // case 4:
+        //     optimalSolutionsList = ILPAlgorithm (truck, pallets);
+        //     break;
         default:
             cerr << RED "Not a valid algorithm number input" RESET << endl;
     }
