@@ -17,6 +17,9 @@ class Pallet {
         int getPalletId() const;
         int getPalletWeight() const;
         int getPalletValue() const;
+        void setPalletId(int palletId);
+        void setPalletWeight(int palletWeight);
+        void setPalletValue(int palletValue);
         void setPalletInTruck(bool inTruck);
 };
 
@@ -30,6 +33,18 @@ inline int Pallet::getPalletWeight() const {
 
 inline int Pallet::getPalletValue() const {
     return palletValue;
+}
+
+inline void Pallet::setPalletId(const int palletId) {
+    this->palletId = palletId;
+}
+
+inline void Pallet::setPalletWeight(const int palletWeight) {
+    this->palletWeight = palletWeight;
+}
+
+inline void Pallet::setPalletValue(const int palletValue) {
+    this->palletValue = palletValue;
 }
 
 inline void Pallet::setPalletInTruck(const bool inTruck) {

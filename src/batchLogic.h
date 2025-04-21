@@ -1,3 +1,9 @@
+#include "truck.h"
+#include "pallet.h"
+#include <iostream>
+#include <fstream>
+#include "parseDataSet.h"
+
 #ifndef BATCHLOGIC_H
 #define BATCHLOGIC_H
 
