@@ -3,14 +3,14 @@
 void batchMode(const int datasetNum, const int algMode) {
     string inFileTruck;
     string inFilePallet;
-    string outFile = "src/output.txt";
+    string outFile = "../src/output.txt";
 
     if (datasetNum < 10) {
         inFileTruck = "../docs/datasets/TruckAndPallets_0" + to_string(datasetNum) + ".csv";
         inFilePallet = "../docs/datasets/Pallets_0" + to_string(datasetNum) + ".csv";
     } else {
-        inFileTruck = "docs/datasets/TruckAndPallets_10.csv";
-        inFilePallet = "docs/datasets/Pallets_10.csv";
+        inFileTruck = "../docs/datasets/TruckAndPallets_10.csv";
+        inFilePallet = "../docs/datasets/Pallets_10.csv";
     }
 
     ifstream inTruck(inFileTruck);
@@ -54,5 +54,14 @@ void batchMode(const int datasetNum, const int algMode) {
             cerr << RED "Not a valid algorithm number input" RESET << endl;
     }
 
+    // write the elements in optimal solution onto the output file
+    for (const auto &optimalSolution : optimalSolutionsList) {
+        for (size_t i = 0; i < optimalSolution.size(); ++i) {
+            out << optimalSolution[i];
+            if (i != optimalSolution.size() - 1)
+                out << ", ";
+        }
+        out << '\n';
+    }
 
 }
