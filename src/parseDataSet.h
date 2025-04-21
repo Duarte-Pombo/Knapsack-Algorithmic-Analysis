@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void initializeData(ifstream &truckData, ifstream &palletData);
+void initializeData(ifstream &truckData, ifstream &palletData, Truck &truck, vector<Pallet> &palletList);
 Truck initializeTruck(ifstream &truckData); // returns truck info
 vector<Pallet> initializePallet(ifstream &palletData); //returns a list with all the pallets
 

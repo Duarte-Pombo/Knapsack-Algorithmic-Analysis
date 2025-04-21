@@ -3,6 +3,10 @@
 #include <iostream>
 #include <fstream>
 #include "parseDataSet.h"
+#include "bruteForceAlg.h"
+#include "dynamicProgAlg.h"
+#include "greedyAlg.h"
+#include "ILPAlg.h"
 
 #ifndef BATCHLOGIC_H
 #define BATCHLOGIC_H

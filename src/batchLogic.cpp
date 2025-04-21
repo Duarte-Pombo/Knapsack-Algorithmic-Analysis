@@ -17,12 +17,42 @@ void batchMode(const int datasetNum, const int algMode) {
     ifstream inPallet(inFilePallet);
     ofstream out(outFile);
 
+    Truck truck;
+    vector<Pallet> pallets;
+
     if (!inTruck.is_open() || !inPallet.is_open()) {
         cerr << RED "Error opening input files." RESET << endl;
         return;
     }
 
     // convert csv files data onto structures
-    initializeData(inTruck, inPallet);
-    return;
+    initializeData(inTruck, inPallet, truck, pallets);
+
+    // DEBUG print
+    // cout << "Truck: Capacity: " << truck.getMaxWeight() << endl;
+    // cout << "Truck: TotalPalletNum: " << truck.getTotalPalletsNum() << endl;
+    // for (int i = 0; i < truck.getTotalPalletsNum(); i++) {
+    //     cout << "Pallet[" << pallets[i].getPalletId() << "]: Weight :"<< pallets[i].getPalletWeight() << "  Value : "<< pallets[i].getPalletValue() << endl;
+    // }
+
+    vector<vector<int>> optimalSolutionsList;
+
+    switch (algMode) {
+        case 1:
+            optimalSolutionsList = BruteForceAlgorithm (truck, pallets);
+            break;
+        case 2:
+            optimalSolutionsList = DynamicProgramingAlgorithm (truck, pallets);
+            break;
+        case 3:
+            optimalSolutionsList = GreedyAlgorithm (truck, pallets);
+            break;
+        case 4:
+            optimalSolutionsList = ILPAlgorithm (truck, pallets);
+            break;
+        default:
+            cerr << RED "Not a valid algorithm number input" RESET << endl;
+    }
+
+
 }

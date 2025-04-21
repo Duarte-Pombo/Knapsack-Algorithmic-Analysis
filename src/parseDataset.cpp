@@ -1,8 +1,8 @@
 #include "parseDataSet.h"
 
-void initializeData(ifstream &truckData, ifstream &palletData) {
-    Truck truck = initializeTruck(truckData);
-    vector<Pallet> palletList = initializePallet(palletData);
+void initializeData(ifstream &truckData, ifstream &palletData, Truck &truck, vector<Pallet> &palletList) {
+    truck = initializeTruck(truckData);
+    palletList = initializePallet(palletData);
 }
 
 Truck initializeTruck(ifstream &truckData) {
