@@ -6,6 +6,6 @@
 #include "pallet.h"
 
 using namespace std;
-vector<vector<int>> GreedyAlgorithm (Truck& truck, vector<Pallet>& pallet);
+vector<Pallet> GreedyAlgorithm (Truck& truck, vector<Pallet>& pallet);
 
 #endif

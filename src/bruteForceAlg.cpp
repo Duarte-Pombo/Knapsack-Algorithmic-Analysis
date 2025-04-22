@@ -1,18 +1,16 @@
 #include "bruteForceAlg.h"
 
-using namespace std;
-
-vector<vector<int>> BruteForceAlgorithm(Truck& truck, vector<Pallet>& pallets) {
+vector<Pallet> BruteForceAlgorithm(Truck& truck, vector<Pallet>& pallets) {
     const int maxWeight = truck.getMaxWeight();
     const int n = pallets.size();
     int maxValue = 0;
-    vector<vector<int>> optSolutions;
+    vector<Pallet> optSolutionList;
 
     // Iterate over all possible subsets (2^n)
-    for (int mask = 0; mask < (1 << n); ++mask) { // (1 << n) = 2^n
+    for (int mask = 0; mask < (1 << n); ++mask) {
         int currWeight = 0;
         int currValue = 0;
-        vector<int> currSolution;
+        vector<Pallet> currSolution;
 
         cout << "Evaluating subset mask: " << mask << endl;
 
@@ -21,7 +19,7 @@ vector<vector<int>> BruteForceAlgorithm(Truck& truck, vector<Pallet>& pallets) {
             if (mask & (1 << i)) {
                 currWeight += pallets[i].getPalletWeight();
                 currValue += pallets[i].getPalletValue();
-                currSolution.push_back(pallets[i].getPalletId());
+                currSolution.push_back(pallets[i]);
 
                 cout << "  Considering pallet ID " << pallets[i].getPalletId()
                      << " (Weight: " << pallets[i].getPalletWeight()
@@ -31,7 +29,7 @@ vector<vector<int>> BruteForceAlgorithm(Truck& truck, vector<Pallet>& pallets) {
 
         cout << "  → Subset total weight = " << currWeight
              << ", total value = " << currValue << ", pallets = ";
-        for (int id : currSolution) cout << id << " ";
+        for (const Pallet& p : currSolution) cout << p.getPalletId() << " ";
         cout << endl;
 
         // Check if the subset is valid and optimal
@@ -39,13 +37,9 @@ vector<vector<int>> BruteForceAlgorithm(Truck& truck, vector<Pallet>& pallets) {
             cout << "  Valid subset (within weight limit)" << endl;
             if (currValue > maxValue) {
                 maxValue = currValue;
-                optSolutions.clear();
-                optSolutions.push_back(currSolution);
+                optSolutionList = currSolution; // store the best current solution
                 cout << "  → New optimal found! Value = " << currValue
                      << ", Weight = " << currWeight << endl;
-            } else if (currValue == maxValue && !currSolution.empty()) {
-                optSolutions.push_back(currSolution);
-                cout << "  → Equal optimal value found (Value = " << currValue << ")" << endl;
             }
         } else {
             cout << "  Subset discarded: overweight (" << currWeight << " > " << maxWeight << ")" << endl;
@@ -54,5 +48,5 @@ vector<vector<int>> BruteForceAlgorithm(Truck& truck, vector<Pallet>& pallets) {
         cout << "--------------------------------------------------" << endl;
     }
 
-    return optSolutions;
+    return optSolutionList;
 }

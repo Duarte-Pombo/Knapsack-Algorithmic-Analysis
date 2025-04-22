@@ -35,33 +35,28 @@ void batchMode(const int datasetNum, const int algMode) {
     //     cout << "Pallet[" << pallets[i].getPalletId() << "]: Weight :"<< pallets[i].getPalletWeight() << "  Value : "<< pallets[i].getPalletValue() << endl;
     // }
 
-    vector<vector<int>> optimalSolutionsList;
+    vector<Pallet> optimalSolutionList;
 
     switch (algMode) {
         case 1:
-            optimalSolutionsList = BruteForceAlgorithm (truck, pallets);
+            optimalSolutionList = BruteForceAlgorithm (truck, pallets);
             break;
         // case 2:
-        //     optimalSolutionsList = DynamicProgramingAlgorithm (truck, pallets);
+        //     optimalSolutionList = DynamicProgramingAlgorithm (truck, pallets);
         //     break;
         // case 3:
-        //     optimalSolutionsList = GreedyAlgorithm (truck, pallets);
+        //     optimalSolutionList = GreedyAlgorithm (truck, pallets);
         //     break;
         // case 4:
-        //     optimalSolutionsList = ILPAlgorithm (truck, pallets);
+        //     optimalSolutionList = ILPAlgorithm (truck, pallets);
         //     break;
         default:
             cerr << RED "Not a valid algorithm number input" RESET << endl;
     }
 
     // write the elements in optimal solution onto the output file
-    for (const auto &optimalSolution : optimalSolutionsList) {
-        for (size_t i = 0; i < optimalSolution.size(); ++i) {
-            out << optimalSolution[i];
-            if (i != optimalSolution.size() - 1)
-                out << ", ";
-        }
-        out << '\n';
+    for (const auto &optimalSolution : optimalSolutionList) {
+        out << optimalSolution.getPalletId() << ", " << optimalSolution.getPalletWeight() << ", " << optimalSolution.getPalletValue() << endl;
     }
 
 }
