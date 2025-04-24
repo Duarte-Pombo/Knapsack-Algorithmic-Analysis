@@ -41,12 +41,12 @@ void batchMode(const int datasetNum, const int algMode) {
         case 1:
             optimalSolutionList = BruteForceAlgorithm (truck, pallets);
             break;
-        // case 2:
-        //     optimalSolutionList = DynamicProgramingAlgorithm (truck, pallets);
-        //     break;
-        // case 3:
-        //     optimalSolutionList = GreedyAlgorithm (truck, pallets);
-        //     break;
+        case 2:
+            optimalSolutionList = DynamicProgramingAlgorithm (truck, pallets);
+            break;
+        case 3:
+            optimalSolutionList = GreedyAlgorithm (truck, pallets);
+            break;
         // case 4:
         //     optimalSolutionList = ILPAlgorithm (truck, pallets);
         //     break;

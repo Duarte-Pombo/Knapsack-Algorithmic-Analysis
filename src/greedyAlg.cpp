@@ -1,5 +1,8 @@
 #include "greedyAlg.h"
 
+#include <algorithm>
+#include <numeric>
+
 bool sortPallets (const Pallet &pa, const Pallet &pb) {
     const double qA = pa.getPalletValue() / pa.getPalletWeight();
     const double qB = pb.getPalletValue() / pb.getPalletWeight();
@@ -26,3 +29,9 @@ vector<Pallet> GreedyAlgorithm(Truck &truck, vector<Pallet> &pallet) {
 
     return selectedPallets;
 }
+
+
+/*
+ *Greedy is a heuristic — fast but not always right
+        it's not guaranteed to find the optimal solution for the 0/1 knapsack problem — it can be fooled by better ratios that waste space.
+ */

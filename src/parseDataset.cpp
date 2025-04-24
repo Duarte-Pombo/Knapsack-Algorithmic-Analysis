@@ -27,9 +27,6 @@ Truck initializeTruck(ifstream &truckData) {
         const int numPallets = stoi(value);
         truck.setTotalPalletsNum(numPallets);
 
-        // Optionally store or validate numPallets
-        cout << "Number of Pallets: " << truck.getTotalPalletsNum() << endl;
-        cout << "Capacity: " << truck.getMaxWeight() << endl;
     }
 
     // Set initial profit to 0

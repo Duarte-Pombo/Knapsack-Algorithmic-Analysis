@@ -2,18 +2,18 @@
 
 vector<Pallet> BruteForceAlgorithm(Truck& truck, vector<Pallet>& pallets) {
     const int maxWeight = truck.getMaxWeight();
-    const int n = pallets.size();
+    const int numPallets = truck.getTotalPalletsNum();
     int maxValue = 0;
     vector<Pallet> optSolutionList;
 
     // Iterate over all possible subsets (2^n)
-    for (int mask = 0; mask < (1 << n); ++mask) {
+    for (int mask = 0; mask < (1 << numPallets); ++mask) {
         int currWeight = 0;
         int currValue = 0;
         vector<Pallet> currSolution;
 
         // Check all possible combinations
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < numPallets; ++i) {
             if (mask & (1 << i)) {
                 currWeight += pallets[i].getPalletWeight();
                 currValue += pallets[i].getPalletValue();
