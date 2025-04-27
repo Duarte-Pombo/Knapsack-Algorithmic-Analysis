@@ -41,8 +41,7 @@ vector<Pallet> DynamicProgramingAlgorithm (Truck& truck, vector<Pallet>& pallet)
         }
     }
 
-    // if needed implement this
-    //reverse(res.begin(), res.end(), reverseByID);
+    reverse(res.begin(), res.end());
 
     return res;
 }
