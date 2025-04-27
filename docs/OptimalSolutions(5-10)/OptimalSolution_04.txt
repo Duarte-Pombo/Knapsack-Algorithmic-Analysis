@@ -13,6 +13,5 @@
 30, 10, 10
 32, 9, 3
 33, 9, 7
-Truck Max Weight: 524
-Total weight in truck: 517
-Total profit in truck: 161
+Total Weight: 517
+Total Profit: 161
