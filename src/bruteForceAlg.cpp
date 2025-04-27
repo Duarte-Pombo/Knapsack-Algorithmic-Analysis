@@ -12,7 +12,6 @@ vector<Pallet> BruteForceAlgorithm(Truck& truck, vector<Pallet>& pallets) {
         int currValue = 0;
         vector<Pallet> currSolution;
 
-        // Check all possible combinations
         for (int i = 0; i < numPallets; ++i) {
             if (mask & (1 << i)) {
                 currWeight += pallets[i].getPalletWeight();
