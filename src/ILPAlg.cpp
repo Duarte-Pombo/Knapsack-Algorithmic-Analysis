@@ -2,7 +2,8 @@
 
 vector<Pallet> ILPAlgorithm (Truck& truck, vector<Pallet>& pallet) {
     //sort pallets by value-to-weight ratio (desc)
-    sort(pallet.begin(), pallet.end(), sortPallets); // sortPallets in greedy alg
+    auto sorted = pallet;
+    sort(sorted.begin(), sorted.end(), sortPallets);
 
     priority_queue<Node> pqueue;
 
@@ -70,7 +71,6 @@ vector<Pallet> ILPAlgorithm (Truck& truck, vector<Pallet>& pallet) {
         }
     }
 
-    cout << "[Branch and Bound] Loaded " << res.size() << " pallets with profit: " << maxProfit << endl;
     return res;
 }
 

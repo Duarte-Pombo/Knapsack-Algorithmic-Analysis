@@ -4,8 +4,8 @@
 #include <numeric>
 
 bool sortPallets (const Pallet &pa, const Pallet &pb) {
-    const double qA = pa.getPalletValue() / pa.getPalletWeight();
-    const double qB = pb.getPalletValue() / pb.getPalletWeight();
+    const double qA = static_cast<double>(pa.getPalletValue()) / pa.getPalletWeight();
+    const double qB = static_cast<double>(pb.getPalletValue()) / pb.getPalletWeight();
     return qA > qB; //higher ratio comes first
 }
 
@@ -29,9 +29,3 @@ vector<Pallet> GreedyAlgorithm(Truck &truck, vector<Pallet> &pallet) {
 
     return selectedPallets;
 }
-
-
-/*
- *Greedy is a heuristic — fast but not always right
-        it's not guaranteed to find the optimal solution for the 0/1 knapsack problem — it can be fooled by better ratios that waste space.
- */
