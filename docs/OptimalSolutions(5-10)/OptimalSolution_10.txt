@@ -1,1 +1,3 @@
 2, 16, 15
+Total Weight : 16
+Total Profit : 15

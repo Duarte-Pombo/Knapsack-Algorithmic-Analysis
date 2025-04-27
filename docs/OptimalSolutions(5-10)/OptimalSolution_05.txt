@@ -2,3 +2,5 @@
 3, 4, 4
 7, 2, 2
 15, 1, 1
+Total Weight : 15
+Total Profit : 15

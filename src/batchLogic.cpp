@@ -54,9 +54,17 @@ void batchMode(const int datasetNum, const int algMode) {
             cerr << RED "Not a valid algorithm number input" RESET << endl;
     }
 
+    int totalWeight = 0;
+    int totalProfit = 0;
     // write the elements in optimal solution onto the output file
     for (const auto &optimalSolution : optimalSolutionList) {
+        totalWeight += optimalSolution.getPalletWeight();
+        totalProfit += optimalSolution.getPalletValue();
         out << optimalSolution.getPalletId() << ", " << optimalSolution.getPalletWeight() << ", " << optimalSolution.getPalletValue() << endl;
     }
+
+    out << "Truck Max Weight: " << truck.getMaxWeight() << endl;
+    out << "Total weight in truck: " << totalWeight << endl ;
+    out << "Total profit in truck: " << totalProfit << endl;
 
 }

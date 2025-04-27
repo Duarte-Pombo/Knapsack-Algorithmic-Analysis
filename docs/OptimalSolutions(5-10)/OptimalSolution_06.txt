@@ -8,3 +8,5 @@
 255, 4, 4
 511, 2, 2
 1023, 1, 1
+Total Weight : 1919
+Total Profit : 1919
