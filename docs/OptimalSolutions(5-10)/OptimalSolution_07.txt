@@ -1,0 +1,4 @@
+13, 233, 377
+14, 377, 610
+Total Weight : 610
+Total Profit : 987

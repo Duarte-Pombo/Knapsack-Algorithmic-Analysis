@@ -1,0 +1,6 @@
+3, 50, 10
+5, 33, 9
+7, 11, 7
+9, 3, 3
+Total Weight: 97
+Total Profit: 29
