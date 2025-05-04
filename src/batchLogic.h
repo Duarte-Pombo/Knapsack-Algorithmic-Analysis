@@ -6,7 +6,7 @@
 #include "bruteForceAlg.h"
 #include "dynamicProgAlg.h"
 #include "greedyAlg.h"
-#include "ILPAlg.h"
+#include "branchAndBound.h"
 
 #ifndef BATCHLOGIC_H
 #define BATCHLOGIC_H
