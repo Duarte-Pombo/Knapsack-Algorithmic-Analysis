@@ -4,20 +4,6 @@
 
 #include <math.h>
 
-// node struct for bb tree
-struct Node {
-    int level;
-    int upperBound; // best possible profit (fractional estimate)
-    int cost; // actual profit of selected pallets
-    int weight; //total weight of pallets in node
-    vector<int> selectedPallets;
-
-    // Max-heap based on upper bound (overload operator)
-    bool operator<(const Node& other) const {
-        return upperBound < other.upperBound;
-    }
-};
-
 // fractional upper bound
 int upperBound(const Node& node, const vector<Pallet>& pallets, int capacity) {
     if (node.weight >= capacity) {
@@ -54,7 +40,7 @@ vector<Pallet> ILPAlgorithm(Truck& truck, vector<Pallet>& pallets) {
     sort(pallets.begin(), pallets.end(), sortPallets);
 
     priority_queue<Node> pq;
-    vector<bool> bestSelection(n, false);
+    vector<int> bestSelection(n, 0);
     int maxProfit = INT_MIN;
 
     // Initialize root node
@@ -62,7 +48,7 @@ vector<Pallet> ILPAlgorithm(Truck& truck, vector<Pallet>& pallets) {
     root.level = -1;
     root.cost = 0;
     root.weight = 0;
-    root.selectedPallets = vector<bool>(n, false);
+    root.selectedPallets = vector<int>(n, 0);
     root.upperBound = upperBound(root, pallets, capacity);
     pq.push(root);
 

@@ -18,7 +18,7 @@
 #include "bruteForceAlg.h"
 #include "dynamicProgAlg.h"
 #include "greedyAlg.h"
-#include "branchAndBound.h"
+#include "ILPAlg.h"
 
 void interactiveMode();
 int displayMenu();
