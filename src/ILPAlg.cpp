@@ -1,99 +1,100 @@
+// source https://www.youtube.com/watch?v=yV1d-b_NeK8&t=133s&ab_channel=AbdulBari
+
 #include "ILPAlg.h"
 
-vector<Pallet> ILPAlgorithm (Truck& truck, vector<Pallet>& pallet) {
-    //sort pallets by value-to-weight ratio (desc)
-    auto sorted = pallet;
-    sort(sorted.begin(), sorted.end(), sortPallets);
+#include <math.h>
 
-    priority_queue<Node> pqueue;
-
-    //init a node
-    Node u;
-    u.nodeLevel = -1;
-    u.nodeProfit = 0;
-    u.nodeWeight = 0;
-    u.palletsInNode = vector<bool> (truck.getTotalPalletsNum(), false);
-    u.bound =  bound(u, pallet, truck.getMaxWeight());
-    pqueue.push(u);
-
-    Node v;
-
-    int maxProfit = 0;
-    vector<bool> bestSelection (truck.getTotalPalletsNum(), false);
-
-    while (!pqueue.empty()) {
-        // analise the top of the pqueue node
-        u = pqueue.top();
-        pqueue.pop();
-
-        if (u.bound <= maxProfit) { continue; } // prune branch
-
-        // move to the next pallet
-        v.nodeLevel = u.nodeLevel + 1;
-        if (v.nodeLevel >= truck.getTotalPalletsNum()) { continue;}
-
-        // COMPUTE THE AFTERMATH OF ADDING OR NOT THE NEXT PALLET AND IF ITS WORTH ADDING TO vector<bool> bestSelection;
-
-        // SCENARIO 1: add the pallet at v.level
-        v.nodeProfit = u.nodeProfit + pallet [v.nodeLevel].getPalletValue();
-        v.nodeWeight = u.nodeWeight + pallet[v.nodeLevel].getPalletWeight();
-        v.palletsInNode = u.palletsInNode;
-        v.palletsInNode[v.nodeLevel] = true; // update previous pallets included in node
-
-        if (v.nodeWeight <= truck.getMaxWeight() && v.nodeProfit > maxProfit) {
-            maxProfit = v.nodeProfit;
-            bestSelection = v.palletsInNode;
-        }
-
-        v.bound = bound(v, pallet, truck.getMaxWeight());
-        if (v.bound > maxProfit) {
-            pqueue.push(v);
-        }
-
-        // SCENARIO 2: dont add the pallet
-        v.nodeProfit = u.nodeProfit;
-        v.nodeWeight = u.nodeWeight;
-        v.palletsInNode = u.palletsInNode;
-        v.palletsInNode[v.nodeLevel] = false;
-
-        v.bound = bound(v, pallet, truck.getMaxWeight());
-
-        if (v.bound > maxProfit) {
-            pqueue.push(v);
-        }
+// fractional upper bound
+int upperBound(const Node& node, const vector<Pallet>& pallets, int capacity) {
+    if (node.weight >= capacity) {
+        return 0;
     }
 
-    // reconstruct the res vector
-    vector<Pallet> res;
-    for (int i = 0; i < truck.getTotalPalletsNum(); i++) {
-        if (bestSelection[i]) {
-            res.push_back(pallet[i]);
-        }
+    int bound = node.cost;
+    int remainWeight = capacity - node.weight;
+    int i = node.level + 1;
+
+    // greedily add pallets until capacity full
+    while (i < pallets.size() && pallets[i].getPalletWeight() <= remainWeight) {
+        bound += pallets[i].getPalletValue();
+        remainWeight -= pallets[i].getPalletWeight();
+        i++;
     }
 
-    return res;
+    // add fration of next item if space remains
+    if (i < pallets.size()) {
+        bound += (pallets[i].getPalletValue() * remainWeight) / pallets[i].getPalletWeight();
+    }
+
+    return bound;
 }
 
-// calculate the upper bound (max profit) of a node
-double bound(const Node& node, const vector<Pallet>& pallets, int capacity) {
-    if (node.nodeWeight >= capacity) { return 0;} // no more profit can fit in this node
+// Branch and Bound ILP algorithm
+vector<Pallet> ILPAlgorithm(Truck& truck, vector<Pallet>& pallets) {
+    int n = pallets.size();
+    int capacity = truck.getMaxWeight();
+    /*
+     * Change made from the video, by sorting we can increase the likelyhood of not having too many nodes in pq
+     */
+    // Sort by value-to-weight ratio (required for upper bound to work correctly)
+    sort(pallets.begin(), pallets.end(), sortPallets);
 
-    double profitBound = node.nodeProfit;
-    int level = node.nodeLevel + 1;
-    int totalWeight = node.nodeWeight;
+    priority_queue<Node> pq;
+    vector<int> bestSelection(n, 0);
+    int maxProfit = INT_MIN;
 
-    // continue adding pallets (greedy)
-    while (level < static_cast<int>(pallets.size()) && totalWeight + pallets[level].getPalletWeight() <= capacity) {
-        totalWeight += pallets[level].getPalletWeight();
-        profitBound += pallets[level].getPalletValue();
-        level++;
+    // Initialize root node
+    Node root;
+    root.level = -1;
+    root.cost = 0;
+    root.weight = 0;
+    root.selectedPallets = vector<int>(n, 0);
+    root.upperBound = upperBound(root, pallets, capacity);
+    pq.push(root);
+
+    while (!pq.empty()) {
+        Node current = pq.top();
+        pq.pop();
+
+        if (current.upperBound <= maxProfit) continue;
+
+        // Try including next pallet
+        if (current.level + 1 < n) {
+            Node include = current;
+            include.level++;
+            include.selectedPallets[include.level] = true;
+            include.cost += pallets[include.level].getPalletValue();
+            include.weight += pallets[include.level].getPalletWeight();
+
+            if (include.weight <= capacity && include.cost > maxProfit) {
+                maxProfit = include.cost;
+                bestSelection = include.selectedPallets;
+            }
+
+            include.upperBound = upperBound(include, pallets, capacity);
+            if (include.upperBound > maxProfit) pq.push(include);
+        }
+
+        // Try excluding next pallet
+        if (current.level + 1 < n) {
+            Node exclude = current;
+            exclude.level++;
+            exclude.upperBound = upperBound(exclude, pallets, capacity);
+            if (exclude.upperBound > maxProfit) pq.push(exclude);
+        }
     }
 
-    // if there is still space, take fraction of next item
-    if (level < static_cast<int>(pallets.size())) {
-        int remain = capacity - totalWeight;
-        profitBound += static_cast<double>(pallets[level].getPalletValue()) / pallets[level].getPalletWeight() * remain;
+    // Build the result using best selection
+    vector<Pallet> result;
+    for (int i = 0; i < n; ++i) {
+        if (bestSelection[i]) {
+            result.push_back(pallets[i]);
+            truck.addPallet(pallets[i]);
+        }
     }
 
-    return profitBound;
+    truck.setCurrProfit(maxProfit);
+    truck.setTotalPalletsNum(result.size());
+
+    return result;
 }

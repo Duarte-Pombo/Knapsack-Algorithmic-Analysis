@@ -1,31 +1,29 @@
 #ifndef ILPALG_H
 #define ILPALG_H
 
-#include <vector>
-#include <iostream>
 #include "truck.h"
 #include "pallet.h"
-#include "greedyAlg.h" // using the sorting alg function from this
 #include <queue>
-#include <algorithm>
-
+#include <vector>
+#include "greedyAlg.h"
+#include <climits>
 using namespace std;
 
-// node struct for the branch and bound tree
+// node struct for bb tree
 struct Node {
-    int nodeLevel; // depth of the node in the decision tree
-    int nodeProfit;
-    int nodeWeight;
-    double bound; // maximum potential profits
+    int level;
+    int upperBound; // best possible profit (fractional estimate)
+    int cost; // actual profit of selected pallets
+    int weight; //total weight of pallets in node
+    vector<int> selectedPallets;
 
-    vector<bool> palletsInNode;
-
-    bool operator < (const Node& rhs) const {
-        return bound > rhs.bound; // overloader to compare the nodes in pqueue by their bound
+    // Max-heap based on upper bound (overload operator)
+    bool operator<(const Node& other) const {
+        return upperBound < other.upperBound;
     }
 };
 
-double bound(const Node& node, const vector<Pallet>& pallets, int capacity);
+int getUpperBound(Node node, vector<Pallet>& pallets, int capacity);
 vector<Pallet> ILPAlgorithm (Truck& truck, vector<Pallet>& pallet);
 
 #endif
