@@ -1,27 +1,34 @@
 // https://youtu.be/cJ21moQpofY?si=HXmmXDoOJQWwZkn0
 
 #include "dynamicProgAlg.h"
+vector<Pallet> DynamicProgramingAlgorithm(Truck& truck, vector<Pallet>& pallets) {
+    // Extract truck constraints
+    const int maxWeight = truck.getMaxWeight();    // Maximum weight the truck can carry
+    const int numPallets = truck.getTotalPalletsNum();  // Total number of pallets available
 
-vector<Pallet> DynamicProgramingAlgorithm (Truck& truck, vector<Pallet>& pallets) {
-    const int maxWeight = truck.getMaxWeight();
-    const int numPallets = truck.getTotalPalletsNum();
-
-    vector<int> weights , values;
+    // Extract weight and value information from pallets
+    vector<int> weights, values, ids;
     for (Pallet p : pallets) {
         weights.push_back(p.getPalletWeight());
         values.push_back(p.getPalletValue());
+        ids.push_back(p.getPalletId());  // Assuming there's a getPalletId() method
     }
 
-    // initialize a dp table
+    // Create DP table with three criteria:
     // - dp[i][w].first = maximum total value possible
-    // - dp[i][w].second = minimum number of pallets needed to achieve that value
-    vector<vector<pair<int, int>>> dp(numPallets + 1, vector<pair<int, int>>(maxWeight + 1, {0, 0}));
+    // - dp[i][w].second.first = minimum number of pallets needed to achieve that value
+    // - dp[i][w].second.second = sum of IDs of pallets in the solution (we'll minimize this)
+    //   (Using sum of IDs as a proxy for "smallest IDs" - solutions with smaller IDs will have smaller sums)
+    vector<vector<pair<int, pair<int, long long>>>> dp(numPallets + 1,
+                                                     vector<pair<int, pair<int, long long>>>(maxWeight + 1,
+                                                     {0, {0, 0}}));
 
-    // populate dp table
+    // Fill the DP table row by row (considering one more pallet each time)
     for (int i = 1; i <= numPallets; i++) {
         // Current pallet under consideration has index (i-1) in the original array
         int currentWeight = weights[i - 1];
         int currentValue = values[i - 1];
+        int currentId = ids[i - 1];
 
         // For each possible weight capacity from 0 to maxWeight
         for (int w = 0; w <= maxWeight; w++) {
@@ -34,59 +41,79 @@ vector<Pallet> DynamicProgramingAlgorithm (Truck& truck, vector<Pallet>& pallets
             else {
                 // Option 1: Exclude the current pallet (use previous solution)
                 int valueWithoutCurrent = dp[i - 1][w].first;
-                int palletsWithoutCurrent = dp[i - 1][w].second;
+                int palletsWithoutCurrent = dp[i - 1][w].second.first;
+                long long idSumWithoutCurrent = dp[i - 1][w].second.second;
 
                 // Option 2: Include the current pallet
                 int valueWithCurrent = dp[i - 1][w - currentWeight].first + currentValue;
-                int palletsWithCurrent = dp[i - 1][w - currentWeight].second + 1; // Add 1 for this pallet
+                int palletsWithCurrent = dp[i - 1][w - currentWeight].second.first + 1; // Add 1 for this pallet
+                long long idSumWithCurrent = dp[i - 1][w - currentWeight].second.second + currentId; // Add this ID to sum
 
-                // Decision logic with optimizations:
+                // Decision logic with optimizations (with nested priority):
                 if (valueWithCurrent > valueWithoutCurrent) {
-                    // Including the pallet gives better value - choose this option
-                    dp[i][w] = {valueWithCurrent, palletsWithCurrent};
+                    // Priority 1: Higher value - choose this option
+                    dp[i][w] = {valueWithCurrent, {palletsWithCurrent, idSumWithCurrent}};
                 }
                 else if (valueWithCurrent == valueWithoutCurrent) {
-                    // Both options give same value - choose the one with fewer pallets
+                    // Equal value - check pallet count (Priority 2)
                     if (palletsWithCurrent < palletsWithoutCurrent) {
-                        dp[i][w] = {valueWithCurrent, palletsWithCurrent};
-                    } else {
-                        dp[i][w] = {valueWithoutCurrent, palletsWithoutCurrent};
+                        // Fewer pallets is better
+                        dp[i][w] = {valueWithCurrent, {palletsWithCurrent, idSumWithCurrent}};
+                    }
+                    else if (palletsWithCurrent == palletsWithoutCurrent) {
+                        // Equal pallet count - check ID sum (Priority 3)
+                        if (idSumWithCurrent < idSumWithoutCurrent) {
+                            // Smaller ID sum is better
+                            dp[i][w] = {valueWithCurrent, {palletsWithCurrent, idSumWithCurrent}};
+                        }
+                        else {
+                            // Keep the solution with smaller ID sum
+                            dp[i][w] = {valueWithoutCurrent, {palletsWithoutCurrent, idSumWithoutCurrent}};
+                        }
+                    }
+                    else {
+                        // Keep solution with fewer pallets
+                        dp[i][w] = {valueWithoutCurrent, {palletsWithoutCurrent, idSumWithoutCurrent}};
                     }
                 }
                 else {
                     // Excluding the pallet gives better value - keep previous solution
-                    dp[i][w] = {valueWithoutCurrent, palletsWithoutCurrent};
+                    dp[i][w] = {valueWithoutCurrent, {palletsWithoutCurrent, idSumWithoutCurrent}};
                 }
             }
         }
     }
 
-    // fetch optimal solution FIX: fetch the lowest ammount of pallets solution
-    vector<Pallet> res;
+    // Backtrack through the DP table to reconstruct the optimal solution
+    vector<Pallet> result;
     int remainingWeight = maxWeight;
+
+    // Start from the bottom-right of the DP table (optimal solution for all pallets and full weight)
     for (int i = numPallets; i > 0 && remainingWeight > 0; i--) {
         // Get current pallet's properties
         int currentWeight = weights[i - 1];
         int currentValue = values[i - 1];
+        int currentId = ids[i - 1];
 
         // Check if this pallet is part of the optimal solution by verifying:
         // 1. The pallet fits within remaining weight
-        // 2. Including this pallet gives the optimal value at this position
-        // 3. The pallet count increases by exactly 1 when this pallet is included
+        // 2. The solution with this pallet matches our optimal criteria
         if (currentWeight <= remainingWeight &&
             dp[i][remainingWeight].first == dp[i - 1][remainingWeight - currentWeight].first + currentValue &&
-            dp[i][remainingWeight].second == dp[i - 1][remainingWeight - currentWeight].second + 1) {
+            dp[i][remainingWeight].second.first == dp[i - 1][remainingWeight - currentWeight].second.first + 1 &&
+            dp[i][remainingWeight].second.second == dp[i - 1][remainingWeight - currentWeight].second.second + currentId) {
 
             // This pallet is part of our solution
-            res.push_back(pallets[i - 1]);
+            result.push_back(pallets[i - 1]);
 
             // Update remaining weight capacity
             remainingWeight -= currentWeight;
-            }
+        }
         // If conditions aren't met, this pallet isn't in our solution, move to next one
     }
 
-    reverse(res.begin(), res.end());
+    // Our backtracking gave pallets in reverse order, so flip it
+    reverse(result.begin(), result.end());
 
-    return res;
+    return result;  // Return the optimal set of pallets
 }
