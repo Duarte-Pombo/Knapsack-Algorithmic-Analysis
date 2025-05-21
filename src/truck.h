@@ -4,6 +4,10 @@
 #include <vector>
 #include "pallet.h"
 
+/**
+ * @class Truck
+ * @brief Represents a truck with a weight capacity and a collection of pallets.
+ */
 class Truck {
     private:
         int maxWeight = -1; // store truck weight capacity
@@ -11,15 +15,59 @@ class Truck {
         int totalPalletsNum = -1; // store total number of pallets available for packing
         vector<Pallet> currPallets;// store current pallets in truck
     public:
+        /**
+         * @brief Gets the maximum weight capacity of the truck.
+         * @return Maximum weight capacity.
+         */
         int getMaxWeight() const;
+
+        /**
+         * @brief Gets the current profit of the truck.
+         * @return Current profit.
+         */
         int getCurrProfit() const;
+
+        /**
+         * @brief Gets the total number of pallets available for packing.
+         * @return Total number of pallets.
+         */
         int getTotalPalletsNum() const;
+
+        /**
+         * @brief Sets the maximum weight capacity of the truck.
+         * @param maxWeight Maximum weight capacity.
+         */
         void setMaxWeight(int maxWeight);
+
+        /**
+         * @brief Sets the current profit of the truck.
+         * @param currProfit Current profit.
+         */
         void setCurrProfit(int currProfit);
+
+        /**
+         * @brief Sets the total number of pallets available for packing.
+         * @param totalPalletsNum Total number of pallets.
+         */
         void setTotalPalletsNum(int totalPalletsNum);
+
+        /**
+         * @brief Gets the current pallets in the truck.
+         * @return Vector of pallets.
+         */
         vector<Pallet> getCurrPallets() const;
-        void addPallet (const Pallet &pallet);
-        void removePallet (Pallet& pallet);
+
+        /**
+         * @brief Adds a pallet to the truck.
+         * @param pallet Pallet to add.
+         */
+        void addPallet(const Pallet &pallet);
+
+        /**
+         * @brief Removes a pallet from the truck.
+         * @param pallet Pallet to remove.
+         */
+        void removePallet(Pallet &pallet);
 };
 
 inline int Truck::getMaxWeight() const {

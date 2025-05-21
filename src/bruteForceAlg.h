@@ -6,6 +6,15 @@
 #include "pallet.h"
 
 using namespace std;
+
+/**
+ * @brief Solves the pallet selection problem using brute force.
+ * @param truck Truck object.
+ * @param pallet List of pallets.
+ * @return Vector of selected pallets.
+ * @complexity O(2^n), where n is the number of pallets.
+ * @space O(n), due to recursion stack.
+ */
 vector<Pallet> BruteForceAlgorithm (Truck& truck, vector<Pallet>& pallet);
 
 #endif

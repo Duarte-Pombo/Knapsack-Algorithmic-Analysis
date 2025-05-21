@@ -1,0 +1,66 @@
+\doxysection{pallet.\+h}
+\hypertarget{pallet_8h_source}{}\label{pallet_8h_source}\index{src/pallet.h@{src/pallet.h}}
+\mbox{\hyperlink{pallet_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PALLET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PALLET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pallet_acd352b66bf358d18f61f9c5f1c7fd528}{Pallet}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ inTruck;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ palletId;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ palletWeight;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ palletValue;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pallet_acd352b66bf358d18f61f9c5f1c7fd528}{Pallet}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ inTruck,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ palletId,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ palletWeight,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ palletValue)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ :\ inTruck(inTruck),\ palletId(palletId),\ palletWeight(palletWeight),\ palletValue(palletValue)\ \{\}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pallet_aa9873598b214b367f5af64086aee2add}{getPalletId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pallet_a5ccc02f1318e55628a38f0f18e0887cb}{getPalletWeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pallet_ad7b991d5ad91d1baeea4bacfb1e1181a}{getPalletValue}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pallet_a9d39a9fc0ea67d038d4afac419797ee8}{setPalletId}}(\textcolor{keywordtype}{int}\ palletId);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pallet_aaa28a1de783235881067ab6adea9a070}{setPalletWeight}}(\textcolor{keywordtype}{int}\ palletWeight);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pallet_aebe92dbadbe6906c2ef3122cf3996507}{setPalletValue}}(\textcolor{keywordtype}{int}\ palletValue);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pallet_a1cb9b58011fc4a3f958068e4c1b74c51}{setPalletInTruck}}(\textcolor{keywordtype}{bool}\ inTruck);}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pallet_aa9873598b214b367f5af64086aee2add}{Pallet::getPalletId}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{return}\ palletId;}
+\DoxyCodeLine{00074\ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pallet_a5ccc02f1318e55628a38f0f18e0887cb}{Pallet::getPalletWeight}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{return}\ palletWeight;}
+\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pallet_ad7b991d5ad91d1baeea4bacfb1e1181a}{Pallet::getPalletValue}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{return}\ palletValue;}
+\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pallet_a9d39a9fc0ea67d038d4afac419797ee8}{Pallet::setPalletId}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ palletId)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ this-\/>palletId\ =\ palletId;}
+\DoxyCodeLine{00086\ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pallet_aaa28a1de783235881067ab6adea9a070}{Pallet::setPalletWeight}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ palletWeight)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ this-\/>palletWeight\ =\ palletWeight;}
+\DoxyCodeLine{00090\ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pallet_aebe92dbadbe6906c2ef3122cf3996507}{Pallet::setPalletValue}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ palletValue)\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ this-\/>palletValue\ =\ palletValue;}
+\DoxyCodeLine{00094\ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pallet_a1cb9b58011fc4a3f958068e4c1b74c51}{Pallet::setPalletInTruck}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ inTruck)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ this-\/>inTruck\ =\ inTruck;}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

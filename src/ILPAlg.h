@@ -23,7 +23,23 @@ struct Node {
     }
 };
 
+/**
+ * @brief Calculates the upper bound for a node in the branch-and-bound tree.
+ * @param node Current node.
+ * @param pallets List of pallets.
+ * @param capacity Maximum weight capacity of the truck.
+ * @return Upper bound for the node.
+ * @complexity O(n), where n is the number of pallets.
+ */
 int getUpperBound(Node node, vector<Pallet>& pallets, int capacity);
+
+/**
+ * @brief Solves the pallet selection problem using Integer Linear Programming (ILP).
+ * @param truck Truck object.
+ * @param pallet List of pallets.
+ * @return Vector of selected pallets.
+ * @complexity O(2^n), where n is the number of pallets (worst case for branch-and-bound).
+ */
 vector<Pallet> ILPAlgorithm (Truck& truck, vector<Pallet>& pallet);
 
 #endif

@@ -20,11 +20,44 @@
 #include "greedyAlg.h"
 #include "ILPAlg.h"
 
+/**
+ * @brief Runs the interactive mode for the program.
+ * @complexity O(1) for menu display and user input handling, excluding algorithm execution.
+ */
 void interactiveMode();
+
+/**
+ * @brief Displays the main menu and gets the user's choice.
+ * @return User's menu choice.
+ * @complexity O(1), as it involves simple input/output operations.
+ */
 int displayMenu();
+
+/**
+ * @brief Displays project information.
+ * @complexity O(1), as it involves simple output operations.
+ */
 void displayProjectInfo();
-int displayAlgorithm ();
+
+/**
+ * @brief Displays the algorithm selection menu and gets the user's choice.
+ * @return User's algorithm choice.
+ * @complexity O(1), as it involves simple input/output operations.
+ */
+int displayAlgorithm();
+
+/**
+ * @brief Displays the truck and pallet options menu and gets the user's choice.
+ * @return User's choice for truck/pallet options.
+ * @complexity O(1), as it involves simple input/output operations.
+ */
 int displayTruckPalletOption();
+
+/**
+ * @brief Displays the solution (selected pallets) to the user.
+ * @param resList Vector of selected pallets.
+ * @complexity O(n), where n is the number of pallets in the result list.
+ */
 void displaySolution(const vector<Pallet>& resList);
 
 #endif //MENULOGIC_H
