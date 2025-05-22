@@ -1,0 +1,35 @@
+\doxysection{src/dynamic\+Prog\+Alg.h File Reference}
+\hypertarget{dynamic_prog_alg_8h}{}\label{dynamic_prog_alg_8h}\index{src/dynamicProgAlg.h@{src/dynamicProgAlg.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}truck.\+h"{}}\newline
+{\ttfamily \#include "{}pallet.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \mbox{\hyperlink{dynamic_prog_alg_8h_a4f3cef23aa0fc159025cbfc3ff9e77b4}{Dynamic\+Programing\+Algorithm}} (\mbox{\hyperlink{class_truck}{Truck}} \&truck, vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&pallet)
+\begin{DoxyCompactList}\small\item\em Solves the pallet selection problem using dynamic programming. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dynamic_prog_alg_8h_a4f3cef23aa0fc159025cbfc3ff9e77b4}\index{dynamicProgAlg.h@{dynamicProgAlg.h}!DynamicProgramingAlgorithm@{DynamicProgramingAlgorithm}}
+\index{DynamicProgramingAlgorithm@{DynamicProgramingAlgorithm}!dynamicProgAlg.h@{dynamicProgAlg.h}}
+\doxysubsubsection{\texorpdfstring{DynamicProgramingAlgorithm()}{DynamicProgramingAlgorithm()}}
+{\footnotesize\ttfamily \label{dynamic_prog_alg_8h_a4f3cef23aa0fc159025cbfc3ff9e77b4} 
+vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ Dynamic\+Programing\+Algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_truck}{Truck}} \&}]{truck}{, }\item[{vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&}]{pallet}{}\end{DoxyParamCaption})}
+
+
+
+Solves the pallet selection problem using dynamic programming. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & \doxylink{class_truck}{Truck} object. \\
+\hline
+{\em pallet} & List of pallets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of selected pallets. {\bfseries{Complexity\+:}} O(n \texorpdfstring{$\ast$}{*} W), where n is the number of pallets and W is the truck\textquotesingle{}s weight capacity. {\bfseries{Space\+:}} O(n \texorpdfstring{$\ast$}{*} W), due to the DP table. 
+\end{DoxyReturn}
