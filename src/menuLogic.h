@@ -1,4 +1,3 @@
-#ifndef MENULOGIC_H
 #define MENULOGIC_H
 
 #define BOLD "\033[1m"
@@ -22,42 +21,40 @@
 
 /**
  * @brief Runs the interactive mode for the program.
- * @complexity O(1) for menu display and user input handling, excluding algorithm execution.
+ * @complexity O(1) time, excluding algorithm execution.
  */
 void interactiveMode();
 
 /**
  * @brief Displays the main menu and gets the user's choice.
  * @return User's menu choice.
- * @complexity O(1), as it involves simple input/output operations.
+ * @complexity O(1) time, O(1) space.
  */
 int displayMenu();
 
 /**
  * @brief Displays project information.
- * @complexity O(1), as it involves simple output operations.
+ * @complexity O(1) time, O(1) space.
  */
 void displayProjectInfo();
 
 /**
  * @brief Displays the algorithm selection menu and gets the user's choice.
  * @return User's algorithm choice.
- * @complexity O(1), as it involves simple input/output operations.
+ * @complexity O(1) time, O(1) space.
  */
 int displayAlgorithm();
 
 /**
  * @brief Displays the truck and pallet options menu and gets the user's choice.
  * @return User's choice for truck/pallet options.
- * @complexity O(1), as it involves simple input/output operations.
+ * @complexity O(1) time, O(1) space.
  */
 int displayTruckPalletOption();
 
 /**
  * @brief Displays the solution (selected pallets) to the user.
  * @param resList Vector of selected pallets.
- * @complexity O(n), where n is the number of pallets in the result list.
+ * @complexity O(n) time, O(1) space, where n is the number of pallets.
  */
 void displaySolution(const vector<Pallet>& resList);
-
-#endif //MENULOGIC_H

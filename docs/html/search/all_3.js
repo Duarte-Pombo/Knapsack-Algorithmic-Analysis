@@ -1,15 +1,14 @@
 var searchData=
 [
-<<<<<<< HEAD
-  ['displayalgorithm_0',['displayAlgorithm',['../menu_logic_8cpp.html#a4144c2c4a000dc31f3bf82fc8703732f',1,'displayAlgorithm():&#160;menuLogic.cpp'],['../menu_logic_8h.html#a4144c2c4a000dc31f3bf82fc8703732f',1,'displayAlgorithm():&#160;menuLogic.cpp']]],
-  ['displaymenu_1',['displayMenu',['../menu_logic_8cpp.html#aad9ed7a055a99883645739e4bfca0e5e',1,'displayMenu():&#160;menuLogic.cpp'],['../menu_logic_8h.html#aad9ed7a055a99883645739e4bfca0e5e',1,'displayMenu():&#160;menuLogic.cpp']]],
-  ['displayprojectinfo_2',['displayProjectInfo',['../menu_logic_8cpp.html#a4182efe86469190003c8f52fa21ac4d6',1,'displayProjectInfo():&#160;menuLogic.cpp'],['../menu_logic_8h.html#a4182efe86469190003c8f52fa21ac4d6',1,'displayProjectInfo():&#160;menuLogic.cpp']]],
-  ['displaysolution_3',['displaySolution',['../menu_logic_8cpp.html#a126725fdfc2c1f1a03dac8aae27d1456',1,'displaySolution(const vector&lt; Pallet &gt; &amp;resList):&#160;menuLogic.cpp'],['../menu_logic_8h.html#a126725fdfc2c1f1a03dac8aae27d1456',1,'displaySolution(const vector&lt; Pallet &gt; &amp;resList):&#160;menuLogic.cpp']]],
-  ['displaytruckpalletoption_4',['displayTruckPalletOption',['../menu_logic_8cpp.html#a761b473cbfb93d0800fc5ad515568759',1,'displayTruckPalletOption():&#160;menuLogic.cpp'],['../menu_logic_8h.html#a761b473cbfb93d0800fc5ad515568759',1,'displayTruckPalletOption():&#160;menuLogic.cpp']]],
-  ['dynamicprogalg_2ecpp_5',['dynamicProgAlg.cpp',['../dynamic_prog_alg_8cpp.html',1,'']]],
-  ['dynamicprogalg_2eh_6',['dynamicProgAlg.h',['../dynamic_prog_alg_8h.html',1,'']]],
-  ['dynamicprogramingalgorithm_7',['DynamicProgramingAlgorithm',['../dynamic_prog_alg_8cpp.html#a4f3cef23aa0fc159025cbfc3ff9e77b4',1,'DynamicProgramingAlgorithm(Truck &amp;truck, vector&lt; Pallet &gt; &amp;pallet):&#160;dynamicProgAlg.cpp'],['../dynamic_prog_alg_8h.html#a4f3cef23aa0fc159025cbfc3ff9e77b4',1,'DynamicProgramingAlgorithm(Truck &amp;truck, vector&lt; Pallet &gt; &amp;pallet):&#160;dynamicProgAlg.cpp']]]
-=======
-  ['readme_2emd_0',['README.md',['../README_8md.html',1,'']]]
->>>>>>> 7765a55ca1c48a168398ff8f1ff306e19107b4f3
+  ['getcurrpallets_0',['getCurrPallets',['../class_truck.html#ad5f967374dcfdbf8443df189ba4b29be',1,'Truck']]],
+  ['getcurrprofit_1',['getCurrProfit',['../class_truck.html#a86186e35220dc2bdb14c894a38817ce2',1,'Truck']]],
+  ['getmaxweight_2',['getMaxWeight',['../class_truck.html#a317d0aaf95d993f5fe24713e1e01aee1',1,'Truck']]],
+  ['getpalletid_3',['getPalletId',['../class_pallet.html#aa9873598b214b367f5af64086aee2add',1,'Pallet']]],
+  ['getpalletvalue_4',['getPalletValue',['../class_pallet.html#ad7b991d5ad91d1baeea4bacfb1e1181a',1,'Pallet']]],
+  ['getpalletweight_5',['getPalletWeight',['../class_pallet.html#a5ccc02f1318e55628a38f0f18e0887cb',1,'Pallet']]],
+  ['gettotalpalletsnum_6',['getTotalPalletsNum',['../class_truck.html#a9f20e566b3982cf8ff534f2848adf12a',1,'Truck']]],
+  ['greedyalg_2ecpp_7',['greedyAlg.cpp',['../greedy_alg_8cpp.html',1,'']]],
+  ['greedyalg_2eh_8',['greedyAlg.h',['../greedy_alg_8h.html',1,'']]],
+  ['greedyalgorithm_9',['GreedyAlgorithm',['../greedy_alg_8cpp.html#a99da9c382b5c5632ea4262a613f7a595',1,'GreedyAlgorithm(Truck &amp;truck, vector&lt; Pallet &gt; &amp;pallet):&#160;greedyAlg.cpp'],['../greedy_alg_8h.html#a99da9c382b5c5632ea4262a613f7a595',1,'GreedyAlgorithm(Truck &amp;truck, vector&lt; Pallet &gt; &amp;pallet):&#160;greedyAlg.cpp']]],
+  ['green_10',['GREEN',['../batch_logic_8h.html#acfbc006ea433ad708fdee3e82996e721',1,'GREEN:&#160;batchLogic.h'],['../menu_logic_8h.html#acfbc006ea433ad708fdee3e82996e721',1,'GREEN:&#160;menuLogic.h']]]
 ];

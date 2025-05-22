@@ -2,27 +2,41 @@
 \hypertarget{struct_node}{}\label{struct_node}\index{Node@{Node}}
 
 
+Represents a node in the decision tree for the branch and bound algorithm.  
+
+
+
+
 {\ttfamily \#include $<$ILPAlg.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{struct_node_acbf4c424e4e58ae45491583204bd80ce}{operator$<$}} (const \mbox{\hyperlink{struct_node}{Node}} \&other) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Comparison operator for priority queue (max-\/heap). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{struct_node_a8728a644d0aa9bcc8fc6a6f935077277}{level}}
 \item 
-int \mbox{\hyperlink{struct_node_afcca4e6fb2077f20528d5c9dd9709416}{upper\+Bound}}
+int \mbox{\hyperlink{struct_node_ad320b81982b379658aee879643983d12}{total\+Weight}}
 \item 
-int \mbox{\hyperlink{struct_node_aae24f318bd4b6d14270084cec3fc98b5}{cost}}
+int \mbox{\hyperlink{struct_node_ac1f752ee9fdc67291b08239d710fc4dd}{total\+Profit}}
 \item 
-int \mbox{\hyperlink{struct_node_ac2e28d6f802044a9330b8b23c21e7d94}{weight}}
+int \mbox{\hyperlink{struct_node_ac9c3cd1c4e0d44fff799ec519a3c872c}{pallet\+Count}}
 \item 
-vector$<$ int $>$ \mbox{\hyperlink{struct_node_a35b1eaf9917dcc5ad9b4d50afa2c2af6}{selected\+Pallets}}
+int \mbox{\hyperlink{struct_node_a874a6bc6029b9abd25898349fc97eeac}{id\+Sum}}
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{struct_node_a0029fd14768869a69ec617628e586207}{path}}
+\item 
+double \mbox{\hyperlink{struct_node_acf7fe937d06fd9b60d50210c325cd143}{bound}}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Represents a node in the decision tree for the branch and bound algorithm. 
+
+Each node stores the current level in the tree, total weight and profit of selected pallets, the number of pallets used, the sum of their IDs (for tie-\/breaking), the path taken, and a bound on the maximum profit achievable from this node. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{struct_node_acbf4c424e4e58ae45491583204bd80ce}\index{Node@{Node}!operator$<$@{operator$<$}}
@@ -33,12 +47,30 @@ bool Node\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{
 
 
 
+Comparison operator for priority queue (max-\/heap). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \doxylink{struct_node}{Node} to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this node\textquotesingle{}s bound is less than the other\textquotesingle{}s (i.\+e., lower priority). 
+\end{DoxyReturn}
+
+
 \doxysubsection{Member Data Documentation}
-\Hypertarget{struct_node_aae24f318bd4b6d14270084cec3fc98b5}\index{Node@{Node}!cost@{cost}}
-\index{cost@{cost}!Node@{Node}}
-\doxysubsubsection{\texorpdfstring{cost}{cost}}
-{\footnotesize\ttfamily \label{struct_node_aae24f318bd4b6d14270084cec3fc98b5} 
-int Node\+::cost}
+\Hypertarget{struct_node_acf7fe937d06fd9b60d50210c325cd143}\index{Node@{Node}!bound@{bound}}
+\index{bound@{bound}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{bound}{bound}}
+{\footnotesize\ttfamily \label{struct_node_acf7fe937d06fd9b60d50210c325cd143} 
+double Node\+::bound}
+
+\Hypertarget{struct_node_a874a6bc6029b9abd25898349fc97eeac}\index{Node@{Node}!idSum@{idSum}}
+\index{idSum@{idSum}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{idSum}{idSum}}
+{\footnotesize\ttfamily \label{struct_node_a874a6bc6029b9abd25898349fc97eeac} 
+int Node\+::id\+Sum}
 
 \Hypertarget{struct_node_a8728a644d0aa9bcc8fc6a6f935077277}\index{Node@{Node}!level@{level}}
 \index{level@{level}!Node@{Node}}
@@ -46,23 +78,29 @@ int Node\+::cost}
 {\footnotesize\ttfamily \label{struct_node_a8728a644d0aa9bcc8fc6a6f935077277} 
 int Node\+::level}
 
-\Hypertarget{struct_node_a35b1eaf9917dcc5ad9b4d50afa2c2af6}\index{Node@{Node}!selectedPallets@{selectedPallets}}
-\index{selectedPallets@{selectedPallets}!Node@{Node}}
-\doxysubsubsection{\texorpdfstring{selectedPallets}{selectedPallets}}
-{\footnotesize\ttfamily \label{struct_node_a35b1eaf9917dcc5ad9b4d50afa2c2af6} 
-vector$<$int$>$ Node\+::selected\+Pallets}
+\Hypertarget{struct_node_ac9c3cd1c4e0d44fff799ec519a3c872c}\index{Node@{Node}!palletCount@{palletCount}}
+\index{palletCount@{palletCount}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{palletCount}{palletCount}}
+{\footnotesize\ttfamily \label{struct_node_ac9c3cd1c4e0d44fff799ec519a3c872c} 
+int Node\+::pallet\+Count}
 
-\Hypertarget{struct_node_afcca4e6fb2077f20528d5c9dd9709416}\index{Node@{Node}!upperBound@{upperBound}}
-\index{upperBound@{upperBound}!Node@{Node}}
-\doxysubsubsection{\texorpdfstring{upperBound}{upperBound}}
-{\footnotesize\ttfamily \label{struct_node_afcca4e6fb2077f20528d5c9dd9709416} 
-int Node\+::upper\+Bound}
+\Hypertarget{struct_node_a0029fd14768869a69ec617628e586207}\index{Node@{Node}!path@{path}}
+\index{path@{path}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \label{struct_node_a0029fd14768869a69ec617628e586207} 
+vector$<$int$>$ Node\+::path}
 
-\Hypertarget{struct_node_ac2e28d6f802044a9330b8b23c21e7d94}\index{Node@{Node}!weight@{weight}}
-\index{weight@{weight}!Node@{Node}}
-\doxysubsubsection{\texorpdfstring{weight}{weight}}
-{\footnotesize\ttfamily \label{struct_node_ac2e28d6f802044a9330b8b23c21e7d94} 
-int Node\+::weight}
+\Hypertarget{struct_node_ac1f752ee9fdc67291b08239d710fc4dd}\index{Node@{Node}!totalProfit@{totalProfit}}
+\index{totalProfit@{totalProfit}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{totalProfit}{totalProfit}}
+{\footnotesize\ttfamily \label{struct_node_ac1f752ee9fdc67291b08239d710fc4dd} 
+int Node\+::total\+Profit}
+
+\Hypertarget{struct_node_ad320b81982b379658aee879643983d12}\index{Node@{Node}!totalWeight@{totalWeight}}
+\index{totalWeight@{totalWeight}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{totalWeight}{totalWeight}}
+{\footnotesize\ttfamily \label{struct_node_ad320b81982b379658aee879643983d12} 
+int Node\+::total\+Weight}
 
 
 

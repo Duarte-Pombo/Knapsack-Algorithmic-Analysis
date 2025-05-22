@@ -12,6 +12,8 @@
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
+\#define \mbox{\hyperlink{menu_logic_8h_a95f7d50517e2d2102c83ee32c5ea73c9}{MENULOGIC\+\_\+H}}
+\item 
 \#define \mbox{\hyperlink{menu_logic_8h_a26cdbb1a00213c810caccf21cd33a631}{BOLD}}~"{}\textbackslash{}033\mbox{[}1m"{}
 \item 
 \#define \mbox{\hyperlink{menu_logic_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}}~"{}\textbackslash{}033\mbox{[}0m"{}
@@ -32,11 +34,11 @@
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{menu_logic_8h_a7e14216fe32ebb188012a9d60e71f44f}{interactive\+Mode}} ()
-\begin{DoxyCompactList}\small\item\em Runs the interactive mode for the program. @complexity O(1) for menu display and user input handling, excluding algorithm execution. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Runs the interactive mode for the program. @complexity O(1) time, excluding algorithm execution. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{menu_logic_8h_aad9ed7a055a99883645739e4bfca0e5e}{display\+Menu}} ()
 \begin{DoxyCompactList}\small\item\em Displays the main menu and gets the user\textquotesingle{}s choice. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{menu_logic_8h_a4182efe86469190003c8f52fa21ac4d6}{display\+Project\+Info}} ()
-\begin{DoxyCompactList}\small\item\em Displays project information. @complexity O(1), as it involves simple output operations. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Displays project information. @complexity O(1) time, O(1) space. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{menu_logic_8h_a4144c2c4a000dc31f3bf82fc8703732f}{display\+Algorithm}} ()
 \begin{DoxyCompactList}\small\item\em Displays the algorithm selection menu and gets the user\textquotesingle{}s choice. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{menu_logic_8h_a761b473cbfb93d0800fc5ad515568759}{display\+Truck\+Pallet\+Option}} ()
@@ -69,6 +71,12 @@ void \mbox{\hyperlink{menu_logic_8h_a126725fdfc2c1f1a03dac8aae27d1456}{display\+
 \doxysubsubsection{\texorpdfstring{ITALIC}{ITALIC}}
 {\footnotesize\ttfamily \label{menu_logic_8h_af706885b9b3eb2821dff28f8e7f7bb3f} 
 \#define ITALIC~"{}\textbackslash{}033\mbox{[}1;37m"{}}
+
+\Hypertarget{menu_logic_8h_a95f7d50517e2d2102c83ee32c5ea73c9}\index{menuLogic.h@{menuLogic.h}!MENULOGIC\_H@{MENULOGIC\_H}}
+\index{MENULOGIC\_H@{MENULOGIC\_H}!menuLogic.h@{menuLogic.h}}
+\doxysubsubsection{\texorpdfstring{MENULOGIC\_H}{MENULOGIC\_H}}
+{\footnotesize\ttfamily \label{menu_logic_8h_a95f7d50517e2d2102c83ee32c5ea73c9} 
+\#define MENULOGIC\+\_\+H}
 
 \Hypertarget{menu_logic_8h_a0bb0b009e7a7390473ace4d98bd843c0}\index{menuLogic.h@{menuLogic.h}!PURPLE@{PURPLE}}
 \index{PURPLE@{PURPLE}!menuLogic.h@{menuLogic.h}}
@@ -108,7 +116,7 @@ int display\+Algorithm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 Displays the algorithm selection menu and gets the user\textquotesingle{}s choice. 
 
 \begin{DoxyReturn}{Returns}
-User\textquotesingle{}s algorithm choice. @complexity O(1), as it involves simple input/output operations. 
+User\textquotesingle{}s algorithm choice. @complexity O(1) time, O(1) space. 
 \end{DoxyReturn}
 \Hypertarget{menu_logic_8h_aad9ed7a055a99883645739e4bfca0e5e}\index{menuLogic.h@{menuLogic.h}!displayMenu@{displayMenu}}
 \index{displayMenu@{displayMenu}!menuLogic.h@{menuLogic.h}}
@@ -121,7 +129,7 @@ int display\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 Displays the main menu and gets the user\textquotesingle{}s choice. 
 
 \begin{DoxyReturn}{Returns}
-User\textquotesingle{}s menu choice. @complexity O(1), as it involves simple input/output operations. 
+User\textquotesingle{}s menu choice. @complexity O(1) time, O(1) space. 
 \end{DoxyReturn}
 \Hypertarget{menu_logic_8h_a4182efe86469190003c8f52fa21ac4d6}\index{menuLogic.h@{menuLogic.h}!displayProjectInfo@{displayProjectInfo}}
 \index{displayProjectInfo@{displayProjectInfo}!menuLogic.h@{menuLogic.h}}
@@ -131,7 +139,7 @@ void display\+Project\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})
 
 
 
-Displays project information. @complexity O(1), as it involves simple output operations. 
+Displays project information. @complexity O(1) time, O(1) space. 
 
 \Hypertarget{menu_logic_8h_a126725fdfc2c1f1a03dac8aae27d1456}\index{menuLogic.h@{menuLogic.h}!displaySolution@{displaySolution}}
 \index{displaySolution@{displaySolution}!menuLogic.h@{menuLogic.h}}
@@ -145,7 +153,7 @@ Displays the solution (selected pallets) to the user.
 
 
 \begin{DoxyParams}{Parameters}
-{\em res\+List} & Vector of selected pallets. @complexity O(n), where n is the number of pallets in the result list. \\
+{\em res\+List} & Vector of selected pallets. @complexity O(n) time, O(1) space, where n is the number of pallets. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{menu_logic_8h_a761b473cbfb93d0800fc5ad515568759}\index{menuLogic.h@{menuLogic.h}!displayTruckPalletOption@{displayTruckPalletOption}}
@@ -159,7 +167,7 @@ int display\+Truck\+Pallet\+Option (\begin{DoxyParamCaption}{}{}\end{DoxyParamCa
 Displays the truck and pallet options menu and gets the user\textquotesingle{}s choice. 
 
 \begin{DoxyReturn}{Returns}
-User\textquotesingle{}s choice for truck/pallet options. @complexity O(1), as it involves simple input/output operations. 
+User\textquotesingle{}s choice for truck/pallet options. @complexity O(1) time, O(1) space. 
 \end{DoxyReturn}
 \Hypertarget{menu_logic_8h_a7e14216fe32ebb188012a9d60e71f44f}\index{menuLogic.h@{menuLogic.h}!interactiveMode@{interactiveMode}}
 \index{interactiveMode@{interactiveMode}!menuLogic.h@{menuLogic.h}}
@@ -169,5 +177,5 @@ void interactive\+Mode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Runs the interactive mode for the program. @complexity O(1) for menu display and user input handling, excluding algorithm execution. 
+Runs the interactive mode for the program. @complexity O(1) time, excluding algorithm execution. 
 

@@ -4,6 +4,7 @@ var menu_logic_8h =
     [ "BOLD", "menu_logic_8h.html#a26cdbb1a00213c810caccf21cd33a631", null ],
     [ "GREEN", "menu_logic_8h.html#acfbc006ea433ad708fdee3e82996e721", null ],
     [ "ITALIC", "menu_logic_8h.html#af706885b9b3eb2821dff28f8e7f7bb3f", null ],
+    [ "MENULOGIC_H", "menu_logic_8h.html#a95f7d50517e2d2102c83ee32c5ea73c9", null ],
     [ "PURPLE", "menu_logic_8h.html#a0bb0b009e7a7390473ace4d98bd843c0", null ],
     [ "RED", "menu_logic_8h.html#a8d23feea868a983c8c2b661e1e16972f", null ],
     [ "RESET", "menu_logic_8h.html#ab702106cf3b3e96750b6845ded4e0299", null ],

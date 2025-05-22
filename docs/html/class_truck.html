@@ -173,7 +173,7 @@ Public Member Functions</h2></td></tr>
 <p>Adds a pallet to the truck. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pallet</td><td><a class="el" href="class_pallet.html" title="Represents a pallet with weight, value, and truck status.">Pallet</a> to add. </td></tr>
+    <tr><td class="paramname">pallet</td><td><a class="el" href="class_pallet.html" title="Represents a pallet with weight, value, and truck status.">Pallet</a> to add. @complexity O(1) time, O(1) space. </td></tr>
   </table>
   </dd>
 </dl>
@@ -204,7 +204,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the current pallets in the truck. </p>
-<dl class="section return"><dt>Returns</dt><dd>Vector of pallets. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector of pallets. @complexity O(1) time, O(n) space, where n is the number of pallets. </dd></dl>
 
 </div>
 </div>
@@ -232,7 +232,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the current profit of the truck. </p>
-<dl class="section return"><dt>Returns</dt><dd>Current profit. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Current profit. @complexity O(1) time, O(1) space. </dd></dl>
 
 </div>
 </div>
@@ -260,7 +260,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the maximum weight capacity of the truck. </p>
-<dl class="section return"><dt>Returns</dt><dd>Maximum weight capacity. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Maximum weight capacity. @complexity O(1) time, O(1) space. </dd></dl>
 
 </div>
 </div>
@@ -288,7 +288,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the total number of pallets available for packing. </p>
-<dl class="section return"><dt>Returns</dt><dd>Total number of pallets. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Total number of pallets. @complexity O(1) time, O(1) space. </dd></dl>
 
 </div>
 </div>
@@ -318,7 +318,7 @@ Public Member Functions</h2></td></tr>
 <p>Removes a pallet from the truck. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pallet</td><td><a class="el" href="class_pallet.html" title="Represents a pallet with weight, value, and truck status.">Pallet</a> to remove. </td></tr>
+    <tr><td class="paramname">pallet</td><td><a class="el" href="class_pallet.html" title="Represents a pallet with weight, value, and truck status.">Pallet</a> to remove. @complexity O(n) time, O(1) space, where n is the number of pallets. </td></tr>
   </table>
   </dd>
 </dl>
@@ -351,7 +351,7 @@ Public Member Functions</h2></td></tr>
 <p>Sets the current profit of the truck. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">currProfit</td><td>Current profit. </td></tr>
+    <tr><td class="paramname">currProfit</td><td>Current profit. @complexity O(1) time, O(1) space. </td></tr>
   </table>
   </dd>
 </dl>
@@ -384,7 +384,7 @@ Public Member Functions</h2></td></tr>
 <p>Sets the maximum weight capacity of the truck. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">maxWeight</td><td>Maximum weight capacity. </td></tr>
+    <tr><td class="paramname">maxWeight</td><td>Maximum weight capacity. @complexity O(1) time, O(1) space. </td></tr>
   </table>
   </dd>
 </dl>
@@ -417,7 +417,7 @@ Public Member Functions</h2></td></tr>
 <p>Sets the total number of pallets available for packing. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">totalPalletsNum</td><td>Total number of pallets. </td></tr>
+    <tr><td class="paramname">totalPalletsNum</td><td>Total number of pallets. @complexity O(1) time, O(1) space. </td></tr>
   </table>
   </dd>
 </dl>

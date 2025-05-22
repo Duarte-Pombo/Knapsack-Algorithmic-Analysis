@@ -110,27 +110,38 @@ $(function(){initNavTree('struct_node.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Represents a node in the decision tree for the branch and bound algorithm.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_i_l_p_alg_8h_source.html">ILPAlg.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acbf4c424e4e58ae45491583204bd80ce" id="r_acbf4c424e4e58ae45491583204bd80ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbf4c424e4e58ae45491583204bd80ce">operator&lt;</a> (const <a class="el" href="struct_node.html">Node</a> &amp;other) const</td></tr>
+<tr class="memdesc:acbf4c424e4e58ae45491583204bd80ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparison operator for priority queue (max-heap).  <br /></td></tr>
 <tr class="separator:acbf4c424e4e58ae45491583204bd80ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a8728a644d0aa9bcc8fc6a6f935077277" id="r_a8728a644d0aa9bcc8fc6a6f935077277"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8728a644d0aa9bcc8fc6a6f935077277">level</a></td></tr>
 <tr class="separator:a8728a644d0aa9bcc8fc6a6f935077277"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcca4e6fb2077f20528d5c9dd9709416" id="r_afcca4e6fb2077f20528d5c9dd9709416"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcca4e6fb2077f20528d5c9dd9709416">upperBound</a></td></tr>
-<tr class="separator:afcca4e6fb2077f20528d5c9dd9709416"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae24f318bd4b6d14270084cec3fc98b5" id="r_aae24f318bd4b6d14270084cec3fc98b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae24f318bd4b6d14270084cec3fc98b5">cost</a></td></tr>
-<tr class="separator:aae24f318bd4b6d14270084cec3fc98b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2e28d6f802044a9330b8b23c21e7d94" id="r_ac2e28d6f802044a9330b8b23c21e7d94"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2e28d6f802044a9330b8b23c21e7d94">weight</a></td></tr>
-<tr class="separator:ac2e28d6f802044a9330b8b23c21e7d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35b1eaf9917dcc5ad9b4d50afa2c2af6" id="r_a35b1eaf9917dcc5ad9b4d50afa2c2af6"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35b1eaf9917dcc5ad9b4d50afa2c2af6">selectedPallets</a></td></tr>
-<tr class="separator:a35b1eaf9917dcc5ad9b4d50afa2c2af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad320b81982b379658aee879643983d12" id="r_ad320b81982b379658aee879643983d12"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad320b81982b379658aee879643983d12">totalWeight</a></td></tr>
+<tr class="separator:ad320b81982b379658aee879643983d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1f752ee9fdc67291b08239d710fc4dd" id="r_ac1f752ee9fdc67291b08239d710fc4dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1f752ee9fdc67291b08239d710fc4dd">totalProfit</a></td></tr>
+<tr class="separator:ac1f752ee9fdc67291b08239d710fc4dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9c3cd1c4e0d44fff799ec519a3c872c" id="r_ac9c3cd1c4e0d44fff799ec519a3c872c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9c3cd1c4e0d44fff799ec519a3c872c">palletCount</a></td></tr>
+<tr class="separator:ac9c3cd1c4e0d44fff799ec519a3c872c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a874a6bc6029b9abd25898349fc97eeac" id="r_a874a6bc6029b9abd25898349fc97eeac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a874a6bc6029b9abd25898349fc97eeac">idSum</a></td></tr>
+<tr class="separator:a874a6bc6029b9abd25898349fc97eeac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0029fd14768869a69ec617628e586207" id="r_a0029fd14768869a69ec617628e586207"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0029fd14768869a69ec617628e586207">path</a></td></tr>
+<tr class="separator:a0029fd14768869a69ec617628e586207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf7fe937d06fd9b60d50210c325cd143" id="r_acf7fe937d06fd9b60d50210c325cd143"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf7fe937d06fd9b60d50210c325cd143">bound</a></td></tr>
+<tr class="separator:acf7fe937d06fd9b60d50210c325cd143"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a node in the decision tree for the branch and bound algorithm. </p>
+<p>Each node stores the current level in the tree, total weight and profit of selected pallets, the number of pallets used, the sum of their IDs (for tie-breaking), the path taken, and a bound on the maximum profit achievable from this node. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="acbf4c424e4e58ae45491583204bd80ce" name="acbf4c424e4e58ae45491583204bd80ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acbf4c424e4e58ae45491583204bd80ce">&#9670;&#160;</a></span>operator&lt;()</h2>
 
@@ -154,17 +165,40 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Comparison operator for priority queue (max-heap). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other <a class="el" href="struct_node.html" title="Represents a node in the decision tree for the branch and bound algorithm.">Node</a> to compare against. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if this node's bound is less than the other's (i.e., lower priority). </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aae24f318bd4b6d14270084cec3fc98b5" name="aae24f318bd4b6d14270084cec3fc98b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae24f318bd4b6d14270084cec3fc98b5">&#9670;&#160;</a></span>cost</h2>
+<a id="acf7fe937d06fd9b60d50210c325cd143" name="acf7fe937d06fd9b60d50210c325cd143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf7fe937d06fd9b60d50210c325cd143">&#9670;&#160;</a></span>bound</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Node::cost</td>
+          <td class="memname">double Node::bound</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a874a6bc6029b9abd25898349fc97eeac" name="a874a6bc6029b9abd25898349fc97eeac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a874a6bc6029b9abd25898349fc97eeac">&#9670;&#160;</a></span>idSum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Node::idSum</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -185,42 +219,56 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a35b1eaf9917dcc5ad9b4d50afa2c2af6" name="a35b1eaf9917dcc5ad9b4d50afa2c2af6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35b1eaf9917dcc5ad9b4d50afa2c2af6">&#9670;&#160;</a></span>selectedPallets</h2>
+<a id="ac9c3cd1c4e0d44fff799ec519a3c872c" name="ac9c3cd1c4e0d44fff799ec519a3c872c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9c3cd1c4e0d44fff799ec519a3c872c">&#9670;&#160;</a></span>palletCount</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;int&gt; Node::selectedPallets</td>
+          <td class="memname">int Node::palletCount</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="afcca4e6fb2077f20528d5c9dd9709416" name="afcca4e6fb2077f20528d5c9dd9709416"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcca4e6fb2077f20528d5c9dd9709416">&#9670;&#160;</a></span>upperBound</h2>
+<a id="a0029fd14768869a69ec617628e586207" name="a0029fd14768869a69ec617628e586207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0029fd14768869a69ec617628e586207">&#9670;&#160;</a></span>path</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Node::upperBound</td>
+          <td class="memname">vector&lt;int&gt; Node::path</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ac2e28d6f802044a9330b8b23c21e7d94" name="ac2e28d6f802044a9330b8b23c21e7d94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2e28d6f802044a9330b8b23c21e7d94">&#9670;&#160;</a></span>weight</h2>
+<a id="ac1f752ee9fdc67291b08239d710fc4dd" name="ac1f752ee9fdc67291b08239d710fc4dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1f752ee9fdc67291b08239d710fc4dd">&#9670;&#160;</a></span>totalProfit</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Node::weight</td>
+          <td class="memname">int Node::totalProfit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad320b81982b379658aee879643983d12" name="ad320b81982b379658aee879643983d12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad320b81982b379658aee879643983d12">&#9670;&#160;</a></span>totalWeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Node::totalWeight</td>
         </tr>
       </table>
 </div><div class="memdoc">

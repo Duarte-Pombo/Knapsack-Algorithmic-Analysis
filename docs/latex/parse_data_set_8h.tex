@@ -36,7 +36,7 @@ Initializes the truck and pallet data from input files.
 \hline
 {\em truck} & \doxylink{class_truck}{Truck} object to initialize. \\
 \hline
-{\em pallet\+List} & Vector to store the list of pallets. @complexity O(n), where n is the number of pallets in the pallet data file. \\
+{\em pallet\+List} & Vector to store the list of pallets. @complexity O(n) time, O(n) space, where n is the number of pallets. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{parse_data_set_8h_afa28f686984c45835a4c9b5f653b0639}\index{parseDataSet.h@{parseDataSet.h}!initializePallet@{initializePallet}}
@@ -55,7 +55,7 @@ Initializes the list of pallets from the input file.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Vector of initialized pallets. @complexity O(n), where n is the number of pallets in the pallet data file. 
+Vector of initialized pallets. @complexity O(n) time, O(n) space, where n is the number of pallets. 
 \end{DoxyReturn}
 \Hypertarget{parse_data_set_8h_a47f6983c292d2f1867c3726dd3e87a5d}\index{parseDataSet.h@{parseDataSet.h}!initializeTruck@{initializeTruck}}
 \index{initializeTruck@{initializeTruck}!parseDataSet.h@{parseDataSet.h}}
@@ -73,5 +73,5 @@ Initializes the truck object from the input file.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Initialized \doxylink{class_truck}{Truck} object. @complexity O(1), as it reads a fixed amount of data. 
+Initialized \doxylink{class_truck}{Truck} object. @complexity O(1) time, O(1) space. 
 \end{DoxyReturn}

@@ -157,7 +157,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname">truckData</td><td>Input file stream for truck data. </td></tr>
     <tr><td class="paramname">palletData</td><td>Input file stream for pallet data. </td></tr>
     <tr><td class="paramname">truck</td><td><a class="el" href="class_truck.html" title="Represents a truck with a weight capacity and a collection of pallets.">Truck</a> object to initialize. </td></tr>
-    <tr><td class="paramname">palletList</td><td>Vector to store the list of pallets. @complexity O(n), where n is the number of pallets in the pallet data file. </td></tr>
+    <tr><td class="paramname">palletList</td><td>Vector to store the list of pallets. @complexity O(n) time, O(n) space, where n is the number of pallets. </td></tr>
   </table>
   </dd>
 </dl>
@@ -186,7 +186,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Vector of initialized pallets. @complexity O(n), where n is the number of pallets in the pallet data file. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector of initialized pallets. @complexity O(n) time, O(n) space, where n is the number of pallets. </dd></dl>
 
 </div>
 </div>
@@ -212,7 +212,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Initialized <a class="el" href="class_truck.html" title="Represents a truck with a weight capacity and a collection of pallets.">Truck</a> object. @complexity O(1), as it reads a fixed amount of data. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Initialized <a class="el" href="class_truck.html" title="Represents a truck with a weight capacity and a collection of pallets.">Truck</a> object. @complexity O(1) time, O(1) space. </dd></dl>
 
 </div>
 </div>

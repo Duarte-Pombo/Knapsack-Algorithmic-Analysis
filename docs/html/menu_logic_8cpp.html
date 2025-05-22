@@ -112,13 +112,13 @@ $(function(){initNavTree('menu_logic_8cpp.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a7e14216fe32ebb188012a9d60e71f44f" id="r_a7e14216fe32ebb188012a9d60e71f44f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e14216fe32ebb188012a9d60e71f44f">interactiveMode</a> ()</td></tr>
-<tr class="memdesc:a7e14216fe32ebb188012a9d60e71f44f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the interactive mode for the program. @complexity O(1) for menu display and user input handling, excluding algorithm execution.  <br /></td></tr>
+<tr class="memdesc:a7e14216fe32ebb188012a9d60e71f44f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the interactive mode for the program. @complexity O(1) time, excluding algorithm execution.  <br /></td></tr>
 <tr class="separator:a7e14216fe32ebb188012a9d60e71f44f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad9ed7a055a99883645739e4bfca0e5e" id="r_aad9ed7a055a99883645739e4bfca0e5e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad9ed7a055a99883645739e4bfca0e5e">displayMenu</a> ()</td></tr>
 <tr class="memdesc:aad9ed7a055a99883645739e4bfca0e5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the main menu and gets the user's choice.  <br /></td></tr>
 <tr class="separator:aad9ed7a055a99883645739e4bfca0e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4182efe86469190003c8f52fa21ac4d6" id="r_a4182efe86469190003c8f52fa21ac4d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4182efe86469190003c8f52fa21ac4d6">displayProjectInfo</a> ()</td></tr>
-<tr class="memdesc:a4182efe86469190003c8f52fa21ac4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays project information. @complexity O(1), as it involves simple output operations.  <br /></td></tr>
+<tr class="memdesc:a4182efe86469190003c8f52fa21ac4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays project information. @complexity O(1) time, O(1) space.  <br /></td></tr>
 <tr class="separator:a4182efe86469190003c8f52fa21ac4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4144c2c4a000dc31f3bf82fc8703732f" id="r_a4144c2c4a000dc31f3bf82fc8703732f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4144c2c4a000dc31f3bf82fc8703732f">displayAlgorithm</a> ()</td></tr>
 <tr class="memdesc:a4144c2c4a000dc31f3bf82fc8703732f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the algorithm selection menu and gets the user's choice.  <br /></td></tr>
@@ -147,7 +147,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Displays the algorithm selection menu and gets the user's choice. </p>
-<dl class="section return"><dt>Returns</dt><dd>User's algorithm choice. @complexity O(1), as it involves simple input/output operations. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>User's algorithm choice. @complexity O(1) time, O(1) space. </dd></dl>
 
 </div>
 </div>
@@ -167,7 +167,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Displays the main menu and gets the user's choice. </p>
-<dl class="section return"><dt>Returns</dt><dd>User's menu choice. @complexity O(1), as it involves simple input/output operations. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>User's menu choice. @complexity O(1) time, O(1) space. </dd></dl>
 
 </div>
 </div>
@@ -186,7 +186,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Displays project information. @complexity O(1), as it involves simple output operations. </p>
+<p>Displays project information. @complexity O(1) time, O(1) space. </p>
 
 </div>
 </div>
@@ -208,7 +208,7 @@ Functions</h2></td></tr>
 <p>Displays the solution (selected pallets) to the user. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">resList</td><td>Vector of selected pallets. @complexity O(n), where n is the number of pallets in the result list. </td></tr>
+    <tr><td class="paramname">resList</td><td>Vector of selected pallets. @complexity O(n) time, O(1) space, where n is the number of pallets. </td></tr>
   </table>
   </dd>
 </dl>
@@ -231,7 +231,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Displays the truck and pallet options menu and gets the user's choice. </p>
-<dl class="section return"><dt>Returns</dt><dd>User's choice for truck/pallet options. @complexity O(1), as it involves simple input/output operations. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>User's choice for truck/pallet options. @complexity O(1) time, O(1) space. </dd></dl>
 
 </div>
 </div>
@@ -250,7 +250,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Runs the interactive mode for the program. @complexity O(1) for menu display and user input handling, excluding algorithm execution. </p>
+<p>Runs the interactive mode for the program. @complexity O(1) time, excluding algorithm execution. </p>
 
 </div>
 </div>

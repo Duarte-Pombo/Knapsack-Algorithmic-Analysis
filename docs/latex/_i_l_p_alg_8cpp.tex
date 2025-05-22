@@ -1,40 +1,82 @@
 \doxysection{src/\+ILPAlg.cpp File Reference}
 \hypertarget{_i_l_p_alg_8cpp}{}\label{_i_l_p_alg_8cpp}\index{src/ILPAlg.cpp@{src/ILPAlg.cpp}}
 {\ttfamily \#include "{}ILPAlg.\+h"{}}\newline
-{\ttfamily \#include $<$math.\+h$>$}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{_i_l_p_alg_8cpp_a92545ba5fc67d1a5d8d97af11081b8d2}{upper\+Bound}} (const \mbox{\hyperlink{struct_node}{Node}} \&node, const vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&pallets, int capacity)
-\item 
+bool \mbox{\hyperlink{_i_l_p_alg_8cpp_a4f9858445160679fcf5c27f3a3623f72}{better}} (const \mbox{\hyperlink{struct_node}{Node}} \&a, const \mbox{\hyperlink{struct_node}{Node}} \&b)
+\begin{DoxyCompactList}\small\item\em Compares two nodes to determine which one is better based on profit, count, and ID sum. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_i_l_p_alg_8cpp_a3e7da3129507ff84f021ca9c128eabfa}{bound}} (const \mbox{\hyperlink{struct_node}{Node}} \&node, const \mbox{\hyperlink{class_truck}{Truck}} \&truck, const vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&pallets, int n)
+\begin{DoxyCompactList}\small\item\em Calculates the upper bound (optimistic profit estimate) for a node. \end{DoxyCompactList}\item 
 vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \mbox{\hyperlink{_i_l_p_alg_8cpp_a0fb9ee21445836bf46de186c47598280}{ILPAlgorithm}} (\mbox{\hyperlink{class_truck}{Truck}} \&truck, vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&pallets)
-\begin{DoxyCompactList}\small\item\em Solves the pallet selection problem using Integer Linear Programming (ILP). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Solves the 0/1 knapsack problem using a branch and bound algorithm tailored for truck loading with pallet constraints. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{_i_l_p_alg_8cpp_a4f9858445160679fcf5c27f3a3623f72}\index{ILPAlg.cpp@{ILPAlg.cpp}!better@{better}}
+\index{better@{better}!ILPAlg.cpp@{ILPAlg.cpp}}
+\doxysubsubsection{\texorpdfstring{better()}{better()}}
+{\footnotesize\ttfamily \label{_i_l_p_alg_8cpp_a4f9858445160679fcf5c27f3a3623f72} 
+bool better (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_node}{Node}} \&}]{a}{, }\item[{const \mbox{\hyperlink{struct_node}{Node}} \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Compares two nodes to determine which one is better based on profit, count, and ID sum. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First node. \\
+\hline
+{\em b} & Second node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if node a is better than node b. 
+\end{DoxyReturn}
+\Hypertarget{_i_l_p_alg_8cpp_a3e7da3129507ff84f021ca9c128eabfa}\index{ILPAlg.cpp@{ILPAlg.cpp}!bound@{bound}}
+\index{bound@{bound}!ILPAlg.cpp@{ILPAlg.cpp}}
+\doxysubsubsection{\texorpdfstring{bound()}{bound()}}
+{\footnotesize\ttfamily \label{_i_l_p_alg_8cpp_a3e7da3129507ff84f021ca9c128eabfa} 
+double bound (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_node}{Node}} \&}]{node}{, }\item[{const \mbox{\hyperlink{class_truck}{Truck}} \&}]{truck}{, }\item[{const vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&}]{pallets}{, }\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the upper bound (optimistic profit estimate) for a node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Current node. \\
+\hline
+{\em truck} & The truck being loaded. \\
+\hline
+{\em pallets} & List of all pallets. \\
+\hline
+{\em n} & Total number of pallets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Upper bound of profit starting from this node. @complexity O(n) time, O(1) space, where n is the number of pallets. 
+\end{DoxyReturn}
 \Hypertarget{_i_l_p_alg_8cpp_a0fb9ee21445836bf46de186c47598280}\index{ILPAlg.cpp@{ILPAlg.cpp}!ILPAlgorithm@{ILPAlgorithm}}
 \index{ILPAlgorithm@{ILPAlgorithm}!ILPAlg.cpp@{ILPAlg.cpp}}
 \doxysubsubsection{\texorpdfstring{ILPAlgorithm()}{ILPAlgorithm()}}
 {\footnotesize\ttfamily \label{_i_l_p_alg_8cpp_a0fb9ee21445836bf46de186c47598280} 
-vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ ILPAlgorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_truck}{Truck}} \&}]{truck}{, }\item[{vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&}]{pallet}{}\end{DoxyParamCaption})}
+vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ ILPAlgorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_truck}{Truck}} \&}]{truck}{, }\item[{vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
 
 
 
-Solves the pallet selection problem using Integer Linear Programming (ILP). 
+Solves the 0/1 knapsack problem using a branch and bound algorithm tailored for truck loading with pallet constraints. 
+
+Pallets are selected to maximize profit while respecting the truck’s weight limit. Ties are broken by fewer pallets and lower ID sum.
 
 
 \begin{DoxyParams}{Parameters}
-{\em truck} & \doxylink{class_truck}{Truck} object. \\
+{\em truck} & The truck object with a max weight limit. \\
 \hline
-{\em pallet} & List of pallets. \\
+{\em pallets} & The list of available pallets with weight and value. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Vector of selected pallets. @complexity O(2\texorpdfstring{$^\wedge$}{\string^}n), where n is the number of pallets (worst case for branch-\/and-\/bound). 
+A vector of selected pallets forming the optimal solution.
 \end{DoxyReturn}
-\Hypertarget{_i_l_p_alg_8cpp_a92545ba5fc67d1a5d8d97af11081b8d2}\index{ILPAlg.cpp@{ILPAlg.cpp}!upperBound@{upperBound}}
-\index{upperBound@{upperBound}!ILPAlg.cpp@{ILPAlg.cpp}}
-\doxysubsubsection{\texorpdfstring{upperBound()}{upperBound()}}
-{\footnotesize\ttfamily \label{_i_l_p_alg_8cpp_a92545ba5fc67d1a5d8d97af11081b8d2} 
-int upper\+Bound (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_node}{Node}} \&}]{node}{, }\item[{const vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&}]{pallets}{, }\item[{int}]{capacity}{}\end{DoxyParamCaption})}
-
+@complexity O(2\texorpdfstring{$^\wedge$}{\string^}n) time (worst case), O(n) space for recursion stack. 

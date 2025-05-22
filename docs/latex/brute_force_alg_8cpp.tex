@@ -1,6 +1,7 @@
 \doxysection{src/brute\+Force\+Alg.cpp File Reference}
 \hypertarget{brute_force_alg_8cpp}{}\label{brute_force_alg_8cpp}\index{src/bruteForceAlg.cpp@{src/bruteForceAlg.cpp}}
 {\ttfamily \#include "{}brute\+Force\+Alg.\+h"{}}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,5 +28,5 @@ Solves the pallet selection problem using brute force.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Vector of selected pallets. @complexity O(2\texorpdfstring{$^\wedge$}{\string^}n), where n is the number of pallets. @space O(n), due to recursion stack. 
+Vector of selected pallets. @complexity O(2\texorpdfstring{$^\wedge$}{\string^}n) time, O(n) space, where n is the number of pallets. 
 \end{DoxyReturn}

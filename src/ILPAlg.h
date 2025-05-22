@@ -35,25 +35,6 @@ struct Node {
 };
 
 /**
-<<<<<<< HEAD
- * @brief Calculates the upper bound for a node in the branch-and-bound tree.
- * @param node Current node.
- * @param pallets List of pallets.
- * @param capacity Maximum weight capacity of the truck.
- * @return Upper bound for the node.
- * @complexity O(n), where n is the number of pallets.
- */
-int getUpperBound(Node node, vector<Pallet>& pallets, int capacity);
-
-/**
- * @brief Solves the pallet selection problem using Integer Linear Programming (ILP).
- * @param truck Truck object.
- * @param pallet List of pallets.
- * @return Vector of selected pallets.
- * @complexity O(2^n), where n is the number of pallets (worst case for branch-and-bound).
- */
-vector<Pallet> ILPAlgorithm (Truck& truck, vector<Pallet>& pallet);
-=======
  * @brief Compares two nodes to determine which one is better based on profit, count, and ID sum.
  *
  * @param a First node.
@@ -69,6 +50,7 @@ bool better(const Node& a, const Node& b);
  * @param pallets List of all pallets.
  * @param n Total number of pallets.
  * @return Upper bound of profit starting from this node.
+ * @complexity O(n) time, O(1) space, where n is the number of pallets.
  */
 double bound(const Node& node, const Truck& truck, const vector<Pallet>& pallets, int n);
 /**
@@ -82,10 +64,8 @@ double bound(const Node& node, const Truck& truck, const vector<Pallet>& pallets
  * @param pallets The list of available pallets with weight and value.
  * @return A vector of selected pallets forming the optimal solution.
  *
- * @complexity O(2^n) in the worst case (due to branching), but pruning and bounding
- * significantly reduce this in practice. Sorting takes O(n log n).
+ * @complexity O(2^n) time (worst case), O(n) space for recursion stack.
  */
 vector<Pallet> ILPAlgorithm(Truck& truck, vector<Pallet>& pallets);
->>>>>>> 7765a55ca1c48a168398ff8f1ff306e19107b4f3
 
 #endif
