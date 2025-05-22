@@ -1,0 +1,95 @@
+\doxysection{src/menu\+Logic.cpp File Reference}
+\hypertarget{menu_logic_8cpp}{}\label{menu_logic_8cpp}\index{src/menuLogic.cpp@{src/menuLogic.cpp}}
+{\ttfamily \#include "{}menu\+Logic.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_logic_8cpp_a7e14216fe32ebb188012a9d60e71f44f}{interactive\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Runs the interactive mode for the program. {\bfseries{Complexity\+:}} O(1) for menu display and user input handling, excluding algorithm execution. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_logic_8cpp_aad9ed7a055a99883645739e4bfca0e5e}{display\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Displays the main menu and gets the user\textquotesingle{}s choice. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_logic_8cpp_a4182efe86469190003c8f52fa21ac4d6}{display\+Project\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Displays project information. {\bfseries{Complexity\+:}} O(1), as it involves simple output operations. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_logic_8cpp_a4144c2c4a000dc31f3bf82fc8703732f}{display\+Algorithm}} ()
+\begin{DoxyCompactList}\small\item\em Displays the algorithm selection menu and gets the user\textquotesingle{}s choice. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_logic_8cpp_a761b473cbfb93d0800fc5ad515568759}{display\+Truck\+Pallet\+Option}} ()
+\begin{DoxyCompactList}\small\item\em Displays the truck and pallet options menu and gets the user\textquotesingle{}s choice. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_logic_8cpp_a126725fdfc2c1f1a03dac8aae27d1456}{display\+Solution}} (const vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&res\+List)
+\begin{DoxyCompactList}\small\item\em Displays the solution (selected pallets) to the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_logic_8cpp_a4144c2c4a000dc31f3bf82fc8703732f}\index{menuLogic.cpp@{menuLogic.cpp}!displayAlgorithm@{displayAlgorithm}}
+\index{displayAlgorithm@{displayAlgorithm}!menuLogic.cpp@{menuLogic.cpp}}
+\doxysubsubsection{\texorpdfstring{displayAlgorithm()}{displayAlgorithm()}}
+{\footnotesize\ttfamily \label{menu_logic_8cpp_a4144c2c4a000dc31f3bf82fc8703732f} 
+int display\+Algorithm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the algorithm selection menu and gets the user\textquotesingle{}s choice. 
+
+\begin{DoxyReturn}{Returns}
+User\textquotesingle{}s algorithm choice. {\bfseries{Complexity\+:}} O(1), as it involves simple input/output operations. 
+\end{DoxyReturn}
+\Hypertarget{menu_logic_8cpp_aad9ed7a055a99883645739e4bfca0e5e}\index{menuLogic.cpp@{menuLogic.cpp}!displayMenu@{displayMenu}}
+\index{displayMenu@{displayMenu}!menuLogic.cpp@{menuLogic.cpp}}
+\doxysubsubsection{\texorpdfstring{displayMenu()}{displayMenu()}}
+{\footnotesize\ttfamily \label{menu_logic_8cpp_aad9ed7a055a99883645739e4bfca0e5e} 
+int display\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the main menu and gets the user\textquotesingle{}s choice. 
+
+\begin{DoxyReturn}{Returns}
+User\textquotesingle{}s menu choice. {\bfseries{Complexity\+:}} O(1), as it involves simple input/output operations. 
+\end{DoxyReturn}
+\Hypertarget{menu_logic_8cpp_a4182efe86469190003c8f52fa21ac4d6}\index{menuLogic.cpp@{menuLogic.cpp}!displayProjectInfo@{displayProjectInfo}}
+\index{displayProjectInfo@{displayProjectInfo}!menuLogic.cpp@{menuLogic.cpp}}
+\doxysubsubsection{\texorpdfstring{displayProjectInfo()}{displayProjectInfo()}}
+{\footnotesize\ttfamily \label{menu_logic_8cpp_a4182efe86469190003c8f52fa21ac4d6} 
+void display\+Project\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays project information. {\bfseries{Complexity\+:}} O(1), as it involves simple output operations. 
+
+\Hypertarget{menu_logic_8cpp_a126725fdfc2c1f1a03dac8aae27d1456}\index{menuLogic.cpp@{menuLogic.cpp}!displaySolution@{displaySolution}}
+\index{displaySolution@{displaySolution}!menuLogic.cpp@{menuLogic.cpp}}
+\doxysubsubsection{\texorpdfstring{displaySolution()}{displaySolution()}}
+{\footnotesize\ttfamily \label{menu_logic_8cpp_a126725fdfc2c1f1a03dac8aae27d1456} 
+void display\+Solution (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&}]{res\+List}{}\end{DoxyParamCaption})}
+
+
+
+Displays the solution (selected pallets) to the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res\+List} & Vector of selected pallets. {\bfseries{Complexity\+:}} O(n), where n is the number of pallets in the result list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{menu_logic_8cpp_a761b473cbfb93d0800fc5ad515568759}\index{menuLogic.cpp@{menuLogic.cpp}!displayTruckPalletOption@{displayTruckPalletOption}}
+\index{displayTruckPalletOption@{displayTruckPalletOption}!menuLogic.cpp@{menuLogic.cpp}}
+\doxysubsubsection{\texorpdfstring{displayTruckPalletOption()}{displayTruckPalletOption()}}
+{\footnotesize\ttfamily \label{menu_logic_8cpp_a761b473cbfb93d0800fc5ad515568759} 
+int display\+Truck\+Pallet\+Option (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the truck and pallet options menu and gets the user\textquotesingle{}s choice. 
+
+\begin{DoxyReturn}{Returns}
+User\textquotesingle{}s choice for truck/pallet options. {\bfseries{Complexity\+:}} O(1), as it involves simple input/output operations. 
+\end{DoxyReturn}
+\Hypertarget{menu_logic_8cpp_a7e14216fe32ebb188012a9d60e71f44f}\index{menuLogic.cpp@{menuLogic.cpp}!interactiveMode@{interactiveMode}}
+\index{interactiveMode@{interactiveMode}!menuLogic.cpp@{menuLogic.cpp}}
+\doxysubsubsection{\texorpdfstring{interactiveMode()}{interactiveMode()}}
+{\footnotesize\ttfamily \label{menu_logic_8cpp_a7e14216fe32ebb188012a9d60e71f44f} 
+void interactive\+Mode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Runs the interactive mode for the program. {\bfseries{Complexity\+:}} O(1) for menu display and user input handling, excluding algorithm execution. 
+
