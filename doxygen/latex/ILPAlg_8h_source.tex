@@ -1,0 +1,34 @@
+\doxysection{ILPAlg.\+h}
+\hypertarget{ILPAlg_8h_source}{}\label{ILPAlg_8h_source}\index{src/ILPAlg.h@{src/ILPAlg.h}}
+\mbox{\hyperlink{ILPAlg_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ILPALG\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ILPALG\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pallet_8h}{pallet.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{truck_8h}{truck.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structNode}{Node}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structNode_a8728a644d0aa9bcc8fc6a6f935077277}{level}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structNode_ad320b81982b379658aee879643983d12}{totalWeight}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structNode_ac1f752ee9fdc67291b08239d710fc4dd}{totalProfit}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structNode_ac9c3cd1c4e0d44fff799ec519a3c872c}{palletCount}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structNode_a874a6bc6029b9abd25898349fc97eeac}{idSum}};}
+\DoxyCodeLine{00025\ \ \ \ \ vector<int>\ \mbox{\hyperlink{structNode_a0029fd14768869a69ec617628e586207}{path}};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structNode_acf7fe937d06fd9b60d50210c325cd143}{bound}};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structNode_acbf4c424e4e58ae45491583204bd80ce}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structNode}{Node}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structNode_acf7fe937d06fd9b60d50210c325cd143}{bound}}\ <\ other.\mbox{\hyperlink{structNode_acf7fe937d06fd9b60d50210c325cd143}{bound}};}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{ILPAlg_8h_a4f9858445160679fcf5c27f3a3623f72}{better}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structNode}{Node}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structNode}{Node}}\&\ b);}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{ILPAlg_8h_a3e7da3129507ff84f021ca9c128eabfa}{bound}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structNode}{Node}}\&\ node,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTruck}{Truck}}\&\ truck,\ \textcolor{keyword}{const}\ vector<Pallet>\&\ pallets,\ \textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{00069\ vector<Pallet>\ \mbox{\hyperlink{ILPAlg_8h_a0fb9ee21445836bf46de186c47598280}{ILPAlgorithm}}(\mbox{\hyperlink{classTruck}{Truck}}\&\ truck,\ vector<Pallet>\&\ pallets);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

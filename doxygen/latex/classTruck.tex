@@ -1,0 +1,170 @@
+\doxysection{Truck Class Reference}
+\hypertarget{classTruck}{}\label{classTruck}\index{Truck@{Truck}}
+
+
+Represents a truck with a weight capacity and a collection of pallets.  
+
+
+
+
+{\ttfamily \#include $<$truck.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classTruck_a317d0aaf95d993f5fe24713e1e01aee1}{get\+Max\+Weight}} () const
+\begin{DoxyCompactList}\small\item\em Gets the maximum weight capacity of the truck. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTruck_a86186e35220dc2bdb14c894a38817ce2}{get\+Curr\+Profit}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current profit of the truck. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTruck_a9f20e566b3982cf8ff534f2848adf12a}{get\+Total\+Pallets\+Num}} () const
+\begin{DoxyCompactList}\small\item\em Gets the total number of pallets available for packing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTruck_a5665b364305030936ae13afe5c800ef3}{set\+Max\+Weight}} (int max\+Weight)
+\begin{DoxyCompactList}\small\item\em Sets the maximum weight capacity of the truck. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTruck_a023b5651ee5e3be6215a27bb3d0611e5}{set\+Curr\+Profit}} (int curr\+Profit)
+\begin{DoxyCompactList}\small\item\em Sets the current profit of the truck. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTruck_a2bd0e32683d8968777232f868a4e5b3f}{set\+Total\+Pallets\+Num}} (int total\+Pallets\+Num)
+\begin{DoxyCompactList}\small\item\em Sets the total number of pallets available for packing. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \mbox{\hyperlink{classTruck_ad5f967374dcfdbf8443df189ba4b29be}{get\+Curr\+Pallets}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current pallets in the truck. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTruck_a8636348f7587c2a0d7553a4f16636ef0}{add\+Pallet}} (const \mbox{\hyperlink{classPallet}{Pallet}} \&pallet)
+\begin{DoxyCompactList}\small\item\em Adds a pallet to the truck. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTruck_a3c69f98bad261cc6e7e67f28a9cbec89}{remove\+Pallet}} (\mbox{\hyperlink{classPallet}{Pallet}} \&pallet)
+\begin{DoxyCompactList}\small\item\em Removes a pallet from the truck. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a truck with a weight capacity and a collection of pallets. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTruck_a8636348f7587c2a0d7553a4f16636ef0}\index{Truck@{Truck}!addPallet@{addPallet}}
+\index{addPallet@{addPallet}!Truck@{Truck}}
+\doxysubsubsection{\texorpdfstring{addPallet()}{addPallet()}}
+{\footnotesize\ttfamily \label{classTruck_a8636348f7587c2a0d7553a4f16636ef0} 
+void Truck\+::add\+Pallet (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPallet}{Pallet}} \&}]{pallet}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a pallet to the truck. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallet} & \doxylink{classPallet}{Pallet} to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTruck_ad5f967374dcfdbf8443df189ba4b29be}\index{Truck@{Truck}!getCurrPallets@{getCurrPallets}}
+\index{getCurrPallets@{getCurrPallets}!Truck@{Truck}}
+\doxysubsubsection{\texorpdfstring{getCurrPallets()}{getCurrPallets()}}
+{\footnotesize\ttfamily \label{classTruck_ad5f967374dcfdbf8443df189ba4b29be} 
+vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ Truck\+::get\+Curr\+Pallets (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current pallets in the truck. 
+
+\begin{DoxyReturn}{Returns}
+Vector of pallets. 
+\end{DoxyReturn}
+\Hypertarget{classTruck_a86186e35220dc2bdb14c894a38817ce2}\index{Truck@{Truck}!getCurrProfit@{getCurrProfit}}
+\index{getCurrProfit@{getCurrProfit}!Truck@{Truck}}
+\doxysubsubsection{\texorpdfstring{getCurrProfit()}{getCurrProfit()}}
+{\footnotesize\ttfamily \label{classTruck_a86186e35220dc2bdb14c894a38817ce2} 
+int Truck\+::get\+Curr\+Profit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current profit of the truck. 
+
+\begin{DoxyReturn}{Returns}
+Current profit. 
+\end{DoxyReturn}
+\Hypertarget{classTruck_a317d0aaf95d993f5fe24713e1e01aee1}\index{Truck@{Truck}!getMaxWeight@{getMaxWeight}}
+\index{getMaxWeight@{getMaxWeight}!Truck@{Truck}}
+\doxysubsubsection{\texorpdfstring{getMaxWeight()}{getMaxWeight()}}
+{\footnotesize\ttfamily \label{classTruck_a317d0aaf95d993f5fe24713e1e01aee1} 
+int Truck\+::get\+Max\+Weight (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the maximum weight capacity of the truck. 
+
+\begin{DoxyReturn}{Returns}
+Maximum weight capacity. 
+\end{DoxyReturn}
+\Hypertarget{classTruck_a9f20e566b3982cf8ff534f2848adf12a}\index{Truck@{Truck}!getTotalPalletsNum@{getTotalPalletsNum}}
+\index{getTotalPalletsNum@{getTotalPalletsNum}!Truck@{Truck}}
+\doxysubsubsection{\texorpdfstring{getTotalPalletsNum()}{getTotalPalletsNum()}}
+{\footnotesize\ttfamily \label{classTruck_a9f20e566b3982cf8ff534f2848adf12a} 
+int Truck\+::get\+Total\+Pallets\+Num (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the total number of pallets available for packing. 
+
+\begin{DoxyReturn}{Returns}
+Total number of pallets. 
+\end{DoxyReturn}
+\Hypertarget{classTruck_a3c69f98bad261cc6e7e67f28a9cbec89}\index{Truck@{Truck}!removePallet@{removePallet}}
+\index{removePallet@{removePallet}!Truck@{Truck}}
+\doxysubsubsection{\texorpdfstring{removePallet()}{removePallet()}}
+{\footnotesize\ttfamily \label{classTruck_a3c69f98bad261cc6e7e67f28a9cbec89} 
+void Truck\+::remove\+Pallet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPallet}{Pallet}} \&}]{pallet}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes a pallet from the truck. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallet} & \doxylink{classPallet}{Pallet} to remove. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTruck_a023b5651ee5e3be6215a27bb3d0611e5}\index{Truck@{Truck}!setCurrProfit@{setCurrProfit}}
+\index{setCurrProfit@{setCurrProfit}!Truck@{Truck}}
+\doxysubsubsection{\texorpdfstring{setCurrProfit()}{setCurrProfit()}}
+{\footnotesize\ttfamily \label{classTruck_a023b5651ee5e3be6215a27bb3d0611e5} 
+void Truck\+::set\+Curr\+Profit (\begin{DoxyParamCaption}\item[{int}]{curr\+Profit}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the current profit of the truck. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr\+Profit} & Current profit. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTruck_a5665b364305030936ae13afe5c800ef3}\index{Truck@{Truck}!setMaxWeight@{setMaxWeight}}
+\index{setMaxWeight@{setMaxWeight}!Truck@{Truck}}
+\doxysubsubsection{\texorpdfstring{setMaxWeight()}{setMaxWeight()}}
+{\footnotesize\ttfamily \label{classTruck_a5665b364305030936ae13afe5c800ef3} 
+void Truck\+::set\+Max\+Weight (\begin{DoxyParamCaption}\item[{int}]{max\+Weight}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the maximum weight capacity of the truck. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Weight} & Maximum weight capacity. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTruck_a2bd0e32683d8968777232f868a4e5b3f}\index{Truck@{Truck}!setTotalPalletsNum@{setTotalPalletsNum}}
+\index{setTotalPalletsNum@{setTotalPalletsNum}!Truck@{Truck}}
+\doxysubsubsection{\texorpdfstring{setTotalPalletsNum()}{setTotalPalletsNum()}}
+{\footnotesize\ttfamily \label{classTruck_a2bd0e32683d8968777232f868a4e5b3f} 
+void Truck\+::set\+Total\+Pallets\+Num (\begin{DoxyParamCaption}\item[{int}]{total\+Pallets\+Num}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the total number of pallets available for packing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+Pallets\+Num} & Total number of pallets. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{truck_8h}{truck.\+h}}\end{DoxyCompactItemize}

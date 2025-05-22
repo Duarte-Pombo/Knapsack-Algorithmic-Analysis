@@ -6,8 +6,16 @@
 bool sortPallets (const Pallet &pa, const Pallet &pb) {
     const double qA = static_cast<double>(pa.getPalletValue()) / pa.getPalletWeight();
     const double qB = static_cast<double>(pb.getPalletValue()) / pb.getPalletWeight();
-    return qA > qB; //higher ratio comes first
+    if (qA != qB)
+        return qA > qB; // 1 higher ratio
+    if (pa.getPalletValue() != pb.getPalletValue())
+        return pa.getPalletValue() > pb.getPalletValue(); // 2 higher value == less pallets in solution
+    return pa.getPalletId() < pb.getPalletId(); // 3 lower id
 }
+
+bool sortById(const Pallet &pa, const Pallet &pb) {
+    return pa.getPalletId() < pb.getPalletId();
+};
 
 vector<Pallet> GreedyAlgorithm(Truck &truck, vector<Pallet> &pallet) {
     vector<Pallet> sortedPallets = pallet;
@@ -26,6 +34,8 @@ vector<Pallet> GreedyAlgorithm(Truck &truck, vector<Pallet> &pallet) {
             currWeight += p.getPalletWeight();
         }
     }
+
+    sort(selectedPallets.begin(), selectedPallets.end(), sortById);
 
     return selectedPallets;
 }
