@@ -36,8 +36,8 @@ vector<Pallet> DynamicProgramingAlgorithm(Truck& truck, vector<Pallet>& pallets)
                 int palletsWithoutCurrent = dp[i - 1][w].second.first;
                 int idSumWithoutCurrent = dp[i - 1][w].second.second;
                 int valueWithCurrent = dp[i - 1][w - currw].first + currv;
-                int palletsWithCurrent = dp[i - 1][w - currw].second.first + 1; // Add 1 for this pallet
-                int idSumWithCurrent = dp[i - 1][w - currw].second.second + currId; // Add this ID to sum
+                int palletsWithCurrent = dp[i - 1][w - currw].second.first + 1; // add 1 to total pallets
+                int idSumWithCurrent = dp[i - 1][w - currw].second.second + currId; // sum id
 
                 // if higher value
                 if (valueWithCurrent > valueWithoutCurrent)
@@ -89,3 +89,4 @@ vector<Pallet> DynamicProgramingAlgorithm(Truck& truck, vector<Pallet>& pallets)
     reverse(res.begin(), res.end());
     return res;
 }
+
