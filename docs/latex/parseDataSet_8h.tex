@@ -1,0 +1,38 @@
+\doxysection{src/parse\+Data\+Set.h File Reference}
+\hypertarget{parseDataSet_8h}{}\label{parseDataSet_8h}\index{src/parseDataSet.h@{src/parseDataSet.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}truck.\+h"{}}\newline
+{\ttfamily \#include "{}pallet.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{parseDataSet_8h_abcb116c6a6503f8bcab33b2f4c6b7cfd}{initialize\+Data}} (ifstream \&truck\+Data, ifstream \&pallet\+Data, \mbox{\hyperlink{classTruck}{Truck}} \&truck, vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&pallet\+List)
+\item 
+\mbox{\hyperlink{classTruck}{Truck}} \mbox{\hyperlink{parseDataSet_8h_a47f6983c292d2f1867c3726dd3e87a5d}{initialize\+Truck}} (ifstream \&truck\+Data)
+\item 
+vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \mbox{\hyperlink{parseDataSet_8h_afa28f686984c45835a4c9b5f653b0639}{initialize\+Pallet}} (ifstream \&pallet\+Data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{parseDataSet_8h_abcb116c6a6503f8bcab33b2f4c6b7cfd}\index{parseDataSet.h@{parseDataSet.h}!initializeData@{initializeData}}
+\index{initializeData@{initializeData}!parseDataSet.h@{parseDataSet.h}}
+\doxysubsubsection{\texorpdfstring{initializeData()}{initializeData()}}
+{\footnotesize\ttfamily \label{parseDataSet_8h_abcb116c6a6503f8bcab33b2f4c6b7cfd} 
+void initialize\+Data (\begin{DoxyParamCaption}\item[{ifstream \&}]{truck\+Data}{, }\item[{ifstream \&}]{pallet\+Data}{, }\item[{\mbox{\hyperlink{classTruck}{Truck}} \&}]{truck}{, }\item[{vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&}]{pallet\+List}{}\end{DoxyParamCaption})}
+
+\Hypertarget{parseDataSet_8h_afa28f686984c45835a4c9b5f653b0639}\index{parseDataSet.h@{parseDataSet.h}!initializePallet@{initializePallet}}
+\index{initializePallet@{initializePallet}!parseDataSet.h@{parseDataSet.h}}
+\doxysubsubsection{\texorpdfstring{initializePallet()}{initializePallet()}}
+{\footnotesize\ttfamily \label{parseDataSet_8h_afa28f686984c45835a4c9b5f653b0639} 
+vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ initialize\+Pallet (\begin{DoxyParamCaption}\item[{ifstream \&}]{pallet\+Data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{parseDataSet_8h_a47f6983c292d2f1867c3726dd3e87a5d}\index{parseDataSet.h@{parseDataSet.h}!initializeTruck@{initializeTruck}}
+\index{initializeTruck@{initializeTruck}!parseDataSet.h@{parseDataSet.h}}
+\doxysubsubsection{\texorpdfstring{initializeTruck()}{initializeTruck()}}
+{\footnotesize\ttfamily \label{parseDataSet_8h_a47f6983c292d2f1867c3726dd3e87a5d} 
+\mbox{\hyperlink{classTruck}{Truck}} initialize\+Truck (\begin{DoxyParamCaption}\item[{ifstream \&}]{truck\+Data}{}\end{DoxyParamCaption})}
+

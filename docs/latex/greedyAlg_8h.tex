@@ -1,0 +1,56 @@
+\doxysection{src/greedy\+Alg.h File Reference}
+\hypertarget{greedyAlg_8h}{}\label{greedyAlg_8h}\index{src/greedyAlg.h@{src/greedyAlg.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include "{}truck.\+h"{}}\newline
+{\ttfamily \#include "{}pallet.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{greedyAlg_8h_a13508315d5f3459637fc10103292c7c0}{sort\+Pallets}} (const \mbox{\hyperlink{classPallet}{Pallet}} \&pa, const \mbox{\hyperlink{classPallet}{Pallet}} \&pb)
+\begin{DoxyCompactList}\small\item\em Sorts pallets by value-\/to-\/weight ratio in descending order. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \mbox{\hyperlink{greedyAlg_8h_a99da9c382b5c5632ea4262a613f7a595}{Greedy\+Algorithm}} (\mbox{\hyperlink{classTruck}{Truck}} \&truck, vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&pallet)
+\begin{DoxyCompactList}\small\item\em Solves the pallet selection problem using a greedy algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{greedyAlg_8h_a99da9c382b5c5632ea4262a613f7a595}\index{greedyAlg.h@{greedyAlg.h}!GreedyAlgorithm@{GreedyAlgorithm}}
+\index{GreedyAlgorithm@{GreedyAlgorithm}!greedyAlg.h@{greedyAlg.h}}
+\doxysubsubsection{\texorpdfstring{GreedyAlgorithm()}{GreedyAlgorithm()}}
+{\footnotesize\ttfamily \label{greedyAlg_8h_a99da9c382b5c5632ea4262a613f7a595} 
+vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ Greedy\+Algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTruck}{Truck}} \&}]{truck}{, }\item[{vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&}]{pallet}{}\end{DoxyParamCaption})}
+
+
+
+Solves the pallet selection problem using a greedy algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & \doxylink{classTruck}{Truck} object. \\
+\hline
+{\em pallet} & List of pallets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of selected pallets. @complexity O(n log n), where n is the number of pallets (due to sorting). 
+\end{DoxyReturn}
+\Hypertarget{greedyAlg_8h_a13508315d5f3459637fc10103292c7c0}\index{greedyAlg.h@{greedyAlg.h}!sortPallets@{sortPallets}}
+\index{sortPallets@{sortPallets}!greedyAlg.h@{greedyAlg.h}}
+\doxysubsubsection{\texorpdfstring{sortPallets()}{sortPallets()}}
+{\footnotesize\ttfamily \label{greedyAlg_8h_a13508315d5f3459637fc10103292c7c0} 
+bool sort\+Pallets (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPallet}{Pallet}} \&}]{pa}{, }\item[{const \mbox{\hyperlink{classPallet}{Pallet}} \&}]{pb}{}\end{DoxyParamCaption})}
+
+
+
+Sorts pallets by value-\/to-\/weight ratio in descending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pa} & First pallet. \\
+\hline
+{\em pb} & Second pallet. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pa has a higher ratio than pb. 
+\end{DoxyReturn}

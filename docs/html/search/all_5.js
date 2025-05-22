@@ -1,5 +1,6 @@
 var searchData=
 [
+<<<<<<< HEAD
   ['ilpalg_2ecpp_0',['ILPAlg.cpp',['../_i_l_p_alg_8cpp.html',1,'']]],
   ['ilpalg_2eh_1',['ILPAlg.h',['../_i_l_p_alg_8h.html',1,'']]],
   ['ilpalgorithm_2',['ILPAlgorithm',['../_i_l_p_alg_8cpp.html#a0fb9ee21445836bf46de186c47598280',1,'ILPAlgorithm(Truck &amp;truck, vector&lt; Pallet &gt; &amp;pallets):&#160;ILPAlg.cpp'],['../_i_l_p_alg_8h.html#a3fab4ee5c8fdc14fc87815cbbd6996d7',1,'ILPAlgorithm(Truck &amp;truck, vector&lt; Pallet &gt; &amp;pallet):&#160;ILPAlg.cpp']]],
@@ -8,4 +9,7 @@ var searchData=
   ['initializetruck_5',['initializeTruck',['../parse_dataset_8cpp.html#a47f6983c292d2f1867c3726dd3e87a5d',1,'initializeTruck(ifstream &amp;truckData):&#160;parseDataset.cpp'],['../parse_data_set_8h.html#a47f6983c292d2f1867c3726dd3e87a5d',1,'initializeTruck(ifstream &amp;truckData):&#160;parseDataset.cpp']]],
   ['interactivemode_6',['interactiveMode',['../menu_logic_8cpp.html#a7e14216fe32ebb188012a9d60e71f44f',1,'interactiveMode():&#160;menuLogic.cpp'],['../menu_logic_8h.html#a7e14216fe32ebb188012a9d60e71f44f',1,'interactiveMode():&#160;menuLogic.cpp']]],
   ['italic_7',['ITALIC',['../menu_logic_8h.html#af706885b9b3eb2821dff28f8e7f7bb3f',1,'menuLogic.h']]]
+=======
+  ['level_0',['level',['../structNode.html#a8728a644d0aa9bcc8fc6a6f935077277',1,'Node']]]
+>>>>>>> 7765a55ca1c48a168398ff8f1ff306e19107b4f3
 ];

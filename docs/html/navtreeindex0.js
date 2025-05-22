@@ -1,5 +1,6 @@
 var NAVTREEINDEX0 =
 {
+<<<<<<< HEAD
 "_i_l_p_alg_8cpp.html":[1,0,0,8],
 "_i_l_p_alg_8cpp.html#a0fb9ee21445836bf46de186c47598280":[1,0,0,8,0],
 "_i_l_p_alg_8cpp.html#a92545ba5fc67d1a5d8d97af11081b8d2":[1,0,0,8,1],
@@ -110,4 +111,8 @@ var NAVTREEINDEX0 =
 "struct_node.html#afcca4e6fb2077f20528d5c9dd9709416":[0,0,0,4],
 "truck_8h.html":[1,0,0,16],
 "truck_8h_source.html":[1,0,0,16]
+=======
+"index.html":[],
+"pages.html":[]
+>>>>>>> 7765a55ca1c48a168398ff8f1ff306e19107b4f3
 };

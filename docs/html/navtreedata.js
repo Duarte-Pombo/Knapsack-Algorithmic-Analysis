@@ -24,6 +24,7 @@
 */
 var NAVTREE =
 [
+<<<<<<< HEAD
   [ "DAProject02", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -43,11 +44,18 @@ var NAVTREE =
       ] ]
     ] ]
   ] ]
+=======
+  [ "DAProject02", "index.html", ]
+>>>>>>> 7765a55ca1c48a168398ff8f1ff306e19107b4f3
 ];
 
 var NAVTREEINDEX =
 [
+<<<<<<< HEAD
 "_i_l_p_alg_8cpp.html"
+=======
+"index.html"
+>>>>>>> 7765a55ca1c48a168398ff8f1ff306e19107b4f3
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

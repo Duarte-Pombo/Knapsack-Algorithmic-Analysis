@@ -6,7 +6,10 @@
 #include "pallet.h"
 
 using namespace std;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7765a55ca1c48a168398ff8f1ff306e19107b4f3
 /**
  * @brief Solves the pallet selection problem using brute force.
  * @param truck Truck object.

@@ -1,0 +1,32 @@
+\doxysection{src/brute\+Force\+Alg.cpp File Reference}
+\hypertarget{bruteForceAlg_8cpp}{}\label{bruteForceAlg_8cpp}\index{src/bruteForceAlg.cpp@{src/bruteForceAlg.cpp}}
+{\ttfamily \#include "{}brute\+Force\+Alg.\+h"{}}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \mbox{\hyperlink{bruteForceAlg_8cpp_ab7a946c10a74d25a8da697b7a96a2931}{Brute\+Force\+Algorithm}} (\mbox{\hyperlink{classTruck}{Truck}} \&truck, vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Solves the pallet selection problem using brute force. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bruteForceAlg_8cpp_ab7a946c10a74d25a8da697b7a96a2931}\index{bruteForceAlg.cpp@{bruteForceAlg.cpp}!BruteForceAlgorithm@{BruteForceAlgorithm}}
+\index{BruteForceAlgorithm@{BruteForceAlgorithm}!bruteForceAlg.cpp@{bruteForceAlg.cpp}}
+\doxysubsubsection{\texorpdfstring{BruteForceAlgorithm()}{BruteForceAlgorithm()}}
+{\footnotesize\ttfamily \label{bruteForceAlg_8cpp_ab7a946c10a74d25a8da697b7a96a2931} 
+vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ Brute\+Force\+Algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTruck}{Truck}} \&}]{truck}{, }\item[{vector$<$ \mbox{\hyperlink{classPallet}{Pallet}} $>$ \&}]{pallet}{}\end{DoxyParamCaption})}
+
+
+
+Solves the pallet selection problem using brute force. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & \doxylink{classTruck}{Truck} object. \\
+\hline
+{\em pallet} & List of pallets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of selected pallets. @complexity O(2\texorpdfstring{$^\wedge$}{\string^}n), where n is the number of pallets. @space O(n), due to recursion stack. 
+\end{DoxyReturn}

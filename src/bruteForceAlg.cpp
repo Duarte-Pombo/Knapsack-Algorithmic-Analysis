@@ -1,10 +1,13 @@
 #include "bruteForceAlg.h"
 
+#include <limits.h>
+
 vector<Pallet> BruteForceAlgorithm(Truck& truck, vector<Pallet>& pallets) {
     const int maxWeight = truck.getMaxWeight();
     const int numPallets = truck.getTotalPalletsNum();
     int maxValue = 0;
-    vector<Pallet> optSolutionList;
+    vector<vector<Pallet>> optSolutionList;
+    vector<Pallet> optSolution;
 
     // Iterate over all possible subsets (2^n)
     for (int mask = 0; mask < (1 << numPallets); ++mask) {
@@ -22,12 +25,25 @@ vector<Pallet> BruteForceAlgorithm(Truck& truck, vector<Pallet>& pallets) {
 
         // Check if the subset is valid and optimal
         if (currWeight <= maxWeight) {
-            if (currValue > maxValue) {
+            if (currValue == maxValue) {
+                optSolutionList.push_back(currSolution);
+            }
+            else if (currValue > maxValue) {
                 maxValue = currValue;
-                optSolutionList = currSolution; // store the best current solution
+                optSolutionList.clear(); //invalidate all other solutions previously being considered
+                optSolutionList.push_back(currSolution); // store the best current solution
             }
         }
     }
 
-    return optSolutionList;
+    int smallestSize = INT_MAX;
+    for (vector<Pallet> sol : optSolutionList) {
+        int currSize = sol.size();
+        if (currSize < smallestSize) {
+            optSolution = sol;
+            smallestSize = currSize;
+        }
+    }
+
+    return optSolution; //return the optimal solution with the smallest number of elements
 }

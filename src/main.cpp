@@ -32,14 +32,14 @@ int main(int argc, char** argv) {
       cerr << "    └───────┴──────────────────────────────────────┘\n";
 
       cerr << "\n" << BOLD "  > AlgorithmNumber (1-4): Selects the algorithm to use\n" RESET;
-      cerr << "    ┌───────┬──────────────────────┬──────────────────────────────────────┐\n";
-      cerr << "    │ Value │ Algorithm            │ Description                          │\n";
-      cerr << "    ├───────┼──────────────────────┼──────────────────────────────────────┤\n";
-      cerr << "    │   1   │ Brute Force          │ Tries all combinations               │\n";
-      cerr << "    │   2   │ Dynamic Programming  │ Bottom-up approach for optimization  │\n";
-      cerr << "    │   3   │ Greedy               │ Heuristic based on value/weight      │\n";
-      cerr << "    │   4   │ ILP                  │ Integer Linear Programming           │\n";
-      cerr << "    └───────┴──────────────────────┴──────────────────────────────────────┘\n";
+      cerr << "    ┌───────┬──────────────────────┬\n";
+      cerr << "    │ Value │ Algorithm            │\n";
+      cerr << "    ├───────┼──────────────────────┼\n";
+      cerr << "    │   1   │ Brute Force          │\n";
+      cerr << "    │   2   │ Dynamic Programming  │\n";
+      cerr << "    │   3   │ Greedy               │\n";
+      cerr << "    │   4   │ ILP                  │\n";
+      cerr << "    └───────┴──────────────────────┴\n";
 
       return EXIT_FAILURE;
       break;
