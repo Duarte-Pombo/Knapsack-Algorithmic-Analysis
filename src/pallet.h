@@ -5,6 +5,10 @@
 
 using namespace std;
 
+/**
+ * @class Pallet
+ * @brief Represents a pallet with weight, value, and truck status.
+ */
 class Pallet {
     private:
         bool inTruck;
@@ -12,14 +16,56 @@ class Pallet {
         int palletWeight;
         int palletValue;
     public:
+        /**
+         * @brief Constructs a Pallet object.
+         * @param inTruck Whether the pallet is in the truck.
+         * @param palletId ID of the pallet.
+         * @param palletWeight Weight of the pallet.
+         * @param palletValue Value of the pallet.
+         */
         Pallet(const bool inTruck, const int palletId, const int palletWeight, const int palletValue)
             : inTruck(inTruck), palletId(palletId), palletWeight(palletWeight), palletValue(palletValue) {}
+
+        /**
+         * @brief Gets the ID of the pallet.
+         * @return Pallet ID.
+         */
         int getPalletId() const;
+
+        /**
+         * @brief Gets the weight of the pallet.
+         * @return Pallet weight.
+         */
         int getPalletWeight() const;
+
+        /**
+         * @brief Gets the value of the pallet.
+         * @return Pallet value.
+         */
         int getPalletValue() const;
+
+        /**
+         * @brief Sets the ID of the pallet.
+         * @param palletId Pallet ID.
+         */
         void setPalletId(int palletId);
+
+        /**
+         * @brief Sets the weight of the pallet.
+         * @param palletWeight Pallet weight.
+         */
         void setPalletWeight(int palletWeight);
+
+        /**
+         * @brief Sets the value of the pallet.
+         * @param palletValue Pallet value.
+         */
         void setPalletValue(int palletValue);
+
+        /**
+         * @brief Sets whether the pallet is in the truck.
+         * @param inTruck Truck status.
+         */
         void setPalletInTruck(bool inTruck);
 };
 

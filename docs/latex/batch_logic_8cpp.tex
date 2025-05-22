@@ -1,0 +1,28 @@
+\doxysection{src/batch\+Logic.cpp File Reference}
+\hypertarget{batch_logic_8cpp}{}\label{batch_logic_8cpp}\index{src/batchLogic.cpp@{src/batchLogic.cpp}}
+{\ttfamily \#include "{}batch\+Logic.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{batch_logic_8cpp_a620724097b8d720831c626d1f1e6cb66}{batch\+Mode}} (const int dataset\+Num, const int alg\+Mode)
+\begin{DoxyCompactList}\small\item\em Runs the program in batch mode with the specified dataset and algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{batch_logic_8cpp_a620724097b8d720831c626d1f1e6cb66}\index{batchLogic.cpp@{batchLogic.cpp}!batchMode@{batchMode}}
+\index{batchMode@{batchMode}!batchLogic.cpp@{batchLogic.cpp}}
+\doxysubsubsection{\texorpdfstring{batchMode()}{batchMode()}}
+{\footnotesize\ttfamily \label{batch_logic_8cpp_a620724097b8d720831c626d1f1e6cb66} 
+void batch\+Mode (\begin{DoxyParamCaption}\item[{const int}]{dataset\+Num}{, }\item[{const int}]{alg\+Mode}{}\end{DoxyParamCaption})}
+
+
+
+Runs the program in batch mode with the specified dataset and algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dataset\+Num} & Dataset number to load. \\
+\hline
+{\em alg\+Mode} & Algorithm number to execute. @complexity O(n) for dataset parsing, plus the complexity of the selected algorithm. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,40 @@
+\doxysection{src/\+ILPAlg.cpp File Reference}
+\hypertarget{_i_l_p_alg_8cpp}{}\label{_i_l_p_alg_8cpp}\index{src/ILPAlg.cpp@{src/ILPAlg.cpp}}
+{\ttfamily \#include "{}ILPAlg.\+h"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_i_l_p_alg_8cpp_a92545ba5fc67d1a5d8d97af11081b8d2}{upper\+Bound}} (const \mbox{\hyperlink{struct_node}{Node}} \&node, const vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&pallets, int capacity)
+\item 
+vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \mbox{\hyperlink{_i_l_p_alg_8cpp_a0fb9ee21445836bf46de186c47598280}{ILPAlgorithm}} (\mbox{\hyperlink{class_truck}{Truck}} \&truck, vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Solves the pallet selection problem using Integer Linear Programming (ILP). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_i_l_p_alg_8cpp_a0fb9ee21445836bf46de186c47598280}\index{ILPAlg.cpp@{ILPAlg.cpp}!ILPAlgorithm@{ILPAlgorithm}}
+\index{ILPAlgorithm@{ILPAlgorithm}!ILPAlg.cpp@{ILPAlg.cpp}}
+\doxysubsubsection{\texorpdfstring{ILPAlgorithm()}{ILPAlgorithm()}}
+{\footnotesize\ttfamily \label{_i_l_p_alg_8cpp_a0fb9ee21445836bf46de186c47598280} 
+vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ ILPAlgorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_truck}{Truck}} \&}]{truck}{, }\item[{vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&}]{pallet}{}\end{DoxyParamCaption})}
+
+
+
+Solves the pallet selection problem using Integer Linear Programming (ILP). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & \doxylink{class_truck}{Truck} object. \\
+\hline
+{\em pallet} & List of pallets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of selected pallets. @complexity O(2\texorpdfstring{$^\wedge$}{\string^}n), where n is the number of pallets (worst case for branch-\/and-\/bound). 
+\end{DoxyReturn}
+\Hypertarget{_i_l_p_alg_8cpp_a92545ba5fc67d1a5d8d97af11081b8d2}\index{ILPAlg.cpp@{ILPAlg.cpp}!upperBound@{upperBound}}
+\index{upperBound@{upperBound}!ILPAlg.cpp@{ILPAlg.cpp}}
+\doxysubsubsection{\texorpdfstring{upperBound()}{upperBound()}}
+{\footnotesize\ttfamily \label{_i_l_p_alg_8cpp_a92545ba5fc67d1a5d8d97af11081b8d2} 
+int upper\+Bound (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_node}{Node}} \&}]{node}{, }\item[{const vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&}]{pallets}{, }\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
