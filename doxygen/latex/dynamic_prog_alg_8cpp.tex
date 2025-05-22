@@ -1,0 +1,31 @@
+\doxysection{src/dynamic\+Prog\+Alg.cpp File Reference}
+\hypertarget{dynamic_prog_alg_8cpp}{}\label{dynamic_prog_alg_8cpp}\index{src/dynamicProgAlg.cpp@{src/dynamicProgAlg.cpp}}
+{\ttfamily \#include "{}dynamic\+Prog\+Alg.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \mbox{\hyperlink{dynamic_prog_alg_8cpp_a81d513970c303bec4a2755148a58bd47}{Dynamic\+Programing\+Algorithm}} (\mbox{\hyperlink{class_truck}{Truck}} \&truck, vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Solves the pallet selection problem using dynamic programming. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dynamic_prog_alg_8cpp_a81d513970c303bec4a2755148a58bd47}\index{dynamicProgAlg.cpp@{dynamicProgAlg.cpp}!DynamicProgramingAlgorithm@{DynamicProgramingAlgorithm}}
+\index{DynamicProgramingAlgorithm@{DynamicProgramingAlgorithm}!dynamicProgAlg.cpp@{dynamicProgAlg.cpp}}
+\doxysubsubsection{\texorpdfstring{DynamicProgramingAlgorithm()}{DynamicProgramingAlgorithm()}}
+{\footnotesize\ttfamily \label{dynamic_prog_alg_8cpp_a81d513970c303bec4a2755148a58bd47} 
+vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ Dynamic\+Programing\+Algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_truck}{Truck}} \&}]{truck}{, }\item[{vector$<$ \mbox{\hyperlink{class_pallet}{Pallet}} $>$ \&}]{pallet}{}\end{DoxyParamCaption})}
+
+
+
+Solves the pallet selection problem using dynamic programming. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & \doxylink{class_truck}{Truck} object. \\
+\hline
+{\em pallet} & List of pallets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of selected pallets. @complexity O(n \texorpdfstring{$\ast$}{*} W), where n is the number of pallets and W is the truck\textquotesingle{}s weight capacity. @space O(n \texorpdfstring{$\ast$}{*} W), due to the DP table. 
+\end{DoxyReturn}
