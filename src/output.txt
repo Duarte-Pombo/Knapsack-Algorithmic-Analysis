@@ -1,4 +1,4 @@
-1, 1, 1
+2, 16, 15
 Truck Max Weight: 16
-Total weight in truck: 1
-Total profit in truck: 1
+Total weight in truck: 16
+Total profit in truck: 15

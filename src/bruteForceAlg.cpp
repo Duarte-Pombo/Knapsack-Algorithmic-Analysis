@@ -1,5 +1,5 @@
 #include "bruteForceAlg.h"
-
+#include "menuLogic.h"
 #include <limits.h>
 
 vector<Pallet> BruteForceAlgorithm(Truck& truck, vector<Pallet>& pallets) {
@@ -8,6 +8,12 @@ vector<Pallet> BruteForceAlgorithm(Truck& truck, vector<Pallet>& pallets) {
     int maxValue = 0;
     vector<vector<Pallet>> optSolutionList;
     vector<Pallet> optSolution;
+
+    if (numPallets > 32) {
+        cerr << RED "CRITICAL: number of pallets in dataset is too large for this algorithm! (cap at 32)" RESET<< endl;
+        return {};
+    }
+
 
     // Iterate over all possible subsets (2^n)
     for (int mask = 0; mask < (1 << numPallets); ++mask) {
