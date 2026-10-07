@@ -173,11 +173,3 @@ Results are written directly to `src/output.txt`, detailing chosen pallets, tota
 * **Heuristic Precision:** The Greedy algorithm runs near-instantaneously ($O(n \log n)$), serving as an effective baseline for massive logistics instances where pseudo-polynomial memory is unavailable.
 
 ---
-
-## Authors
-
-* **Dinis Cabral Lima**
-* **Diogo Alves Martins**
-* **Duarte Pombo Martins**
-
-Developed as part of the Design of Algorithms course curriculum at FEUP (2024/2025).
